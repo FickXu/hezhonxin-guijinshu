@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "和众鑫贵金属",
+    "usingComponents": {
+        "bottom-nav": "../components/bottom-nav/bottom-nav",
+        "contact-me": "../components/contact-me/contact-me",
+        "person-center": "../components/person-center/person-center"
+    }
+}

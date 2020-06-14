@@ -1,0 +1,44 @@
+  
+<view class="person-center">
+  <view class="bg-top">
+    <cu-custom>
+      <view slot="content" class="nav-title">{{ title }}</view>
+    </cu-custom>
+    <!-- 个人信息 -->
+    <view class="user-info">
+      <image src="{{userInfo.avatarUrl}}"  class="user-photo" />
+      <view class="user-info-name">
+        <text>{{userInfo.nickName}}</text>
+        <text class="small">{{userInfo.province}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="cu-list menu list-contact">
+    <view class="cu-item arrow">
+      <view class="content">
+        <text class="custome-icon-size cuIcon-lock text-blue"></text>投保列表
+      </view>
+    </view>
+    <view class="cu-item arrow">
+      <view class="content">
+        <text class="custome-icon-size cuIcon-newsfill text-blue"></text>入库列表
+      </view>
+    </view>
+    <view class="cu-item arrow">
+      <view class="content">
+        <text class="custome-icon-size cuIcon-newsfill text-blue"></text>定价列表
+      </view>
+    </view>
+    <view class="cu-item arrow">
+      <view class="content">
+        <text class="custome-icon-size cuIcon-newsfill text-blue"></text>压料列表
+      </view>
+    </view>
+    <view class="cu-item arrow">
+      <view class="content">
+        <text class="custome-icon-size cuIcon-newsfill text-blue"></text>账单列表
+      </view>
+    </view>
+  </view>
+</view>

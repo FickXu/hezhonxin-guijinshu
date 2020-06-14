@@ -1,0 +1,152 @@
+// .top-area 高度
+@height-top-area: 460rpx;
+// .near-shop-info margin top
+@padding-top-scrollpage: 420rpx;
+// 底部导航高度
+@height-nav: calc(100rpx + env(safe-area-inset-bottom) / 2);
+// 顶部toolbar高度
+@height-tool-bar: 168rpx;
+// 登录组件的高度
+@height-login: 60rpx;
+
+.top-area {
+  width: 100%;
+  height: @height-top-area;
+  background-color: #febd01;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  .nav-title {
+    font-weight: 700;
+  }
+}
+
+.scrollPage {
+  height: calc(~"100vh - @{height-nav} - @{height-login}");
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  width: 100%;
+  background-color: #ffffff;
+
+  .container {
+    width: 100%;
+    padding: 30rpx;
+    border-radius: 30rpx;
+    background-color: #fff;
+  }
+
+  // 定价信息
+  .price-info {
+    width: 100%;
+    height: 110rpx;
+  }
+
+  // 报价信息
+  .offer-info {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40rpx;
+
+    .title {
+      font-size: 36rpx;
+      color: #333333;
+      font-weight: 700;
+      position: relative;
+      text-indent: 30rpx;
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 10rpx;
+        height: 100%;
+        border-radius: 20rpx;
+        background-color: #febd01;
+      }
+    }
+
+    .time {
+      font-size: 24rpx;
+      color: #888888;
+    }
+  }
+
+  // 报价明细
+  .quoted {
+    margin-top: 60rpx;
+
+    // 列表
+    &-list {
+      padding: 20rpx;
+    }
+    
+    // item
+    &-item {
+      width: 100%;
+      height: 126rpx;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #f7f7f7;
+
+      .name {
+        flex: 3;
+        width: 150rpx;
+        height: 64rpx;
+        line-height: 64rpx;
+        color: #ffffff; 
+        font-size: 30rpx;
+        text-align: center;
+        border-radius: 10rpx;
+        background-image: linear-gradient(#f7d05f, #f7b050);
+      }
+
+      .attr-item {
+        flex: 2;
+        text-align: right;
+
+        .label {
+          color: #666666;
+          font-size: 22rpx;
+        }
+
+        .value {
+          color: #333333;
+          font-size: 25rpx;
+          margin-top: 10rpx;
+        }
+      }
+
+      .red {
+        color: #ec4c4c;
+      }
+
+      .orgin {
+        color: #f7b452;
+      }
+    }
+  }
+}
+// 登录
+.login {
+  width: 100%;
+  height: @height-login;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  bottom: @height-nav;
+  padding: 0 30rpx;
+  background-color: #fff;
+
+  .warn {
+    color: #888888;
+  }
+
+  .btn-login {
+    color: #f7b452;
+  }
+}
