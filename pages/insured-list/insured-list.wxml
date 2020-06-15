@@ -1,0 +1,16 @@
+<!--pages/insured-list/insured-list.wxml-->
+<cu-custom bgColor="bg-white" isBac k="{{true}}">
+	<view slot="content">{{ title }}</view>
+</cu-custom>
+
+<!-- 投保列表 -->
+<scroll-view scroll-y="true">
+  <!-- 搜索 -->
+  <view class="search-box">
+    
+  </view>
+
+  <!-- 结果 -->
+  <view class="search-result"></view>
+</scroll-view>
+  

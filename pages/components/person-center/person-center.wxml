@@ -15,27 +15,27 @@
   </view>
 
   <view class="cu-list menu list-contact">
-    <view class="cu-item arrow">
+    <view class="cu-item arrow" bindtap="goToPage" data-page-name="insured-list">
       <view class="content">
         <text class="custome-icon-size cuIcon-lock text-blue"></text>投保列表
       </view>
     </view>
-    <view class="cu-item arrow">
+    <view class="cu-item arrow" bindtap="goToPage" data-page-name="warehouseing-list">
       <view class="content">
         <text class="custome-icon-size cuIcon-newsfill text-blue"></text>入库列表
       </view>
     </view>
-    <view class="cu-item arrow">
+    <view class="cu-item arrow" bindtap="goToPage" data-page-name="price-list">
       <view class="content">
         <text class="custome-icon-size cuIcon-newsfill text-blue"></text>定价列表
       </view>
     </view>
-    <view class="cu-item arrow">
+    <view class="cu-item arrow" bindtap="goToPage" data-page-name="pressing-list">
       <view class="content">
         <text class="custome-icon-size cuIcon-newsfill text-blue"></text>压料列表
       </view>
     </view>
-    <view class="cu-item arrow">
+    <view class="cu-item arrow" bindtap="goToPage" data-page-name="account-list">
       <view class="content">
         <text class="custome-icon-size cuIcon-newsfill text-blue"></text>账单列表
       </view>

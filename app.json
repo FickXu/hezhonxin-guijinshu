@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/insured-list/insured-list",
     "pages/home/home",
     "pages/address-list/address-list"
   ],

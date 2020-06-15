@@ -40,38 +40,17 @@ Component({
 		// })
 	},
 	methods: {
-		// 查看购物车
-		getShopCar: function () {
+		// 跳转页面
+		goToPage: function (e) {
+			let page_name = e.currentTarget.dataset.pageName
+			console.log(page_name)
 			wx.navigateTo({
-				url: '../../pages/shop-car/shop-car'
+				url: `../../pages/${page_name}/${page_name}`,
+				success: function (res) {},
+				fail: function (err) {
+					console.error(err)
+				}
 			})
 		},
-		// 查看订单
-		getOrders: function () {
-			wx.navigateTo({
-				url: '../../pages/orders/orders'
-			})
-		},
-		openConfirm: function () {
-			wx.showModal({
-					content: '检测到您没打开地址权限，是否去设置打开？',
-					confirmText: "确认",
-					cancelText: "取消",
-					success: function (res) {
-							if (res.confirm) {
-									wx.openSetting({
-											success: (res) => { }   //打开设置面板
-									})
-							} else {
-									console.log('用户点击取消')
-							}
-					}
-			});
-		},
-		chooseAddress: function () {
-			wx.navigateTo({
-				url: '../../pages/address-list/address-list'
-			})
-		}
 	}
 })
