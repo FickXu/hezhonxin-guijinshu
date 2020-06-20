@@ -1,6 +1,8 @@
 {
   "pages": [
     "pages/home/home",
+    "pages/warehouseing-list/warehouseing-list",
+    "pages/insured-info/insured-info",
     "pages/insured-list/insured-list",
     "pages/address-list/address-list"
   ],

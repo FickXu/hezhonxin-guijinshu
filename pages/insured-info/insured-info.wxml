@@ -1,0 +1,81 @@
+<!--pages/insured-list/insured-list.wxml-->
+<cu-custom bgColor="bg-white" isBack="{{true}}">
+	<view slot="content">{{ title }}</view>
+</cu-custom>
+
+<!-- 投保列表 -->
+<scroll-view scroll-y="true">
+
+  <view class="margin-tb-lg">
+    
+    <!-- header -->
+    <view class="cu-bar bg-white">
+      <view class='action text-df'>
+        <text class='cuIcon-titles text-orange '></text> 投保单基本信息
+      </view>
+    </view>
+    <view class="bg-white solid-bottom padding-lr-lg">
+      <view class="title">保险声明</view>
+      <view class="text-red">本保险仅对已进入指定承运单位系统的货物整包遗失负责！</view>
+    </view>
+
+    <!-- 表单 -->
+    <view class="cu-form-group">
+      <view class="title">快递单号</view>
+      <input class="text-right" type="text" placeholder="请填写快递单号" />
+    </view>
+    <view class="cu-form-group">
+      <view class="title">起运港</view>
+      <input class="text-right" type="text" placeholder="请填写起运港" />
+    </view>
+
+    <!-- 保费 -->
+    <view class="cu-form-group margin-top">
+      <view class="title">保额</view>
+      <input class="text-right" type="text" placeholder="请输入正整数的保额" />
+    </view>
+    <view class="cu-form-group">
+      <view class="title">保额大写</view>
+      <input class="text-right" disabled="{{true}}" type="text" placeholder="保额大写" />
+    </view>
+    <view class="cu-form-group ">
+      <view class="title">保费</view>
+      <input class="text-right" type="text" placeholder="请输入正整数保费" />
+    </view>
+
+    <!-- 要求 -->
+    <view class="cu-form-group align-start">
+      <view class="title">要求</view>
+      <textarea class="text-right" maxlength="-1" bindinput="textareaBInput" placeholder="请输入要求"></textarea>
+    </view>
+
+    <!-- 客户信息 -->
+    <view class="cu-form-group margin-top">
+      <view class="title">客户</view>
+      <text class="text-gray">张三丰</text>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">收件人</view>
+      <text class="text-gray">李四</text>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">目的港</view>
+      <text class="text-gray">三水</text>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">费率</view>
+      <text class="text-gray">0.04</text>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">件数</view>
+      <text class="text-gray">4</text>
+    </view>
+
+    <!-- 提交 -->
+    <view class="margin-tb-lg text-center" wx:key>
+      <button class="cu-btn round bg-yellow" style="width: 80%">提交</button>
+    </view>
+
+  </view>
+</scroll-view>
+  
