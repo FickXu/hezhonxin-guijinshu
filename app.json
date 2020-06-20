@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/insured-list/insured-list",
     "pages/home/home",
+    "pages/insured-list/insured-list",
     "pages/address-list/address-list"
   ],
   "window": {
