@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/home/home",
+    "pages/pressing-list/pressing-list",
     "pages/warehouseing-list/warehouseing-list",
     "pages/insured-info/insured-info",
     "pages/insured-list/insured-list",
