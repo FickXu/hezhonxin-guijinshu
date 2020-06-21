@@ -1,6 +1,9 @@
 {
   "pages": [
     "pages/home/home",
+    "pages/testing-info/testing-info",
+    "pages/price-list/price-list",
+    "pages/account-list/account-list",
     "pages/pressing-list/pressing-list",
     "pages/warehouseing-list/warehouseing-list",
     "pages/insured-info/insured-info",

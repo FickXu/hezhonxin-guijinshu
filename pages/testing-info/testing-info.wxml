@@ -1,0 +1,95 @@
+<!--pages/insured-list/insured-list.wxml-->
+<cu-custom bgColor="bg-white" isBack="{{true}}">
+	<view slot="content">{{ title }}</view>
+</cu-custom>
+
+<!-- 投保列表 -->
+<scroll-view scroll-y="true">
+
+  <!-- 结束时间 -->
+  <view class="cu-form-group">
+    <view class="title">
+      <text class="text-red">代为</text>
+      客户的
+      <text class="text-red">3094509345809</text>
+      快递单成色信息
+    </view>
+  </view>
+  <view class="tag-box padding-lr bg-white">
+    <view class="zjs-tag bg-light-yellow">料类别</view>
+    <view class="zjs-tag bg-light-yellow">料类别</view>
+    <view class="zjs-tag bg-light-yellow">料类别</view>
+    <view class="zjs-tag bg-light-yellow">料类别</view>
+    <view class="zjs-tag bg-light-yellow">料类别</view>
+    <view class="zjs-tag bg-light-yellow">料类别</view>
+    <view class="zjs-tag bg-light-yellow">料类别</view>
+  </view>
+  <view class="tag-box padding-lr bg-white">
+    <view class="zjs-tag bg-gray">料类别</view>
+    <view class="zjs-tag bg-gray">料类别</view>
+    <view class="zjs-tag bg-gray">料类别</view>
+    <view class="zjs-tag bg-gray">料类别</view>
+    <view class="zjs-tag bg-gray">料类别</view>
+    <view class="zjs-tag bg-gray">料类别</view>
+    <view class="zjs-tag bg-gray">料类别</view>
+  </view>
+  
+  <!-- 定价 -->
+  <view class="padding-lr bg-white margin-top padding-top">
+    <view class='action text-df'>
+      <text class='cuIcon-titles text-orange '></text> 入库汇总板重
+    </view>
+    <view class="flex justify-between margin-top">
+      <view class="tag-box">
+        <view class="label">黄金</view>
+        <view class="zjs-tag bg-gray margin-left-sm">9</view>
+      </view>
+      <view class="tag-box">
+        <view class="label">钯金</view>
+        <view class="zjs-tag bg-gray margin-left-sm">9</view>
+      </view>
+      <view class="tag-box">
+        <view class="label">铂金</view>
+        <view class="zjs-tag bg-gray margin-left-sm">9</view>
+      </view>
+      <view class="tag-box">
+        <view class="label">白银</view>
+        <view class="zjs-tag bg-gray margin-left-sm">9</view>
+      </view>
+    </view>
+    
+  </view>
+  
+  <!-- 入库汇总净重 -->
+  <view class="padding-lr bg-white margin-top padding-top">
+    <view class='action text-df'>
+      <text class='cuIcon-titles text-orange '></text> 入库汇总净重
+    </view>
+    <view class="flex justify-between margin-top">
+      <view class="tag-box">
+        <view class="label">黄金</view>
+        <view class="zjs-tag bg-gray margin-left-sm">9</view>
+      </view>
+      <view class="tag-box">
+        <view class="label">钯金</view>
+        <view class="zjs-tag bg-gray margin-left-sm">9</view>
+      </view>
+      <view class="tag-box">
+        <view class="label">铂金</view>
+        <view class="zjs-tag bg-gray margin-left-sm">9</view>
+      </view>
+      <view class="tag-box">
+        <view class="label">白银</view>
+        <view class="zjs-tag bg-gray margin-left-sm">9</view>
+      </view>
+    </view>
+    
+  </view>
+
+  <view class="cu-form-group align-start margin-top">
+    <view class="title">检测备注</view>
+    <textarea maxlength="-1" disabled="{{true}}" bindinput="textareaAInput" placeholder="一切正常"></textarea>
+  </view>
+    
+</scroll-view>
+  

@@ -1,0 +1,182 @@
+<!--pages/insured-list/insured-list.wxml-->
+<cu-custom bgColor="bg-white" isBack="{{true}}">
+	<view slot="content">{{ title }}</view>
+</cu-custom>
+
+<!-- 投保列表 -->
+<scroll-view scroll-y="true">
+
+  <!-- 搜索 -->
+  <view class="search-box">
+    
+    <!-- 快递单号 -->
+    <view class="cu-form-group">
+      <view class="title">备注</view>
+      <input class="text-right" placeholder="请输入备注"></input>
+    </view>
+
+
+    <view class="cu-form-group">
+      <view class="title">压料状态</view>
+      <view class="text-right">
+        <radio-group class="block">
+          <radio class="yellow"></radio>全部
+          <radio class="yellow margin-left-sm"></radio>销售
+        </radio-group>
+      </view>
+    </view>
+
+    <!-- 开始时间 -->
+    <view class="cu-form-group">
+      <view class="title">开始时间</view>
+      <picker mode="date" value="{{date}}" start="2015-09-01" end="2020-09-01" bindchange="DateChange">
+        <view class="picker">
+          {{date}}
+        </view>
+      </picker>
+    </view>
+    
+    <!-- 结束时间 -->
+    <view class="cu-form-group">
+      <view class="title">结束时间</view>
+      <picker mode="date" value="{{date1}}" start="2015-09-01" end="2020-09-01" bindchange="DateChange1">
+        <view class="picker">
+          {{date1}}
+        </view>
+      </picker>
+    </view>
+
+    <view class="margin-tb-lg text-center">
+      <button class="cu-btn round bg-yellow" style="width: 80%">查询</button>
+    </view>
+  </view>
+
+    
+    <!-- 表单 -->
+    <view class="cu-form-group">
+      <text class="title">时间</text>
+      <text class="text-gray">2020-6-20 22:07:42</text>
+    </view>
+    <view class="cu-form-group">
+      <text class="title">银行</text>
+      <text class="text-gray">招商</text>
+    </view>
+    <view class="cu-form-group">
+      <text class="title">客户名</text>
+      <text class="text-gray">赵四</text>
+    </view>
+
+    <!-- 进出账信息 -->
+    <view class="cu-bar bg-white margin-top">
+      <view class='action text-df'>
+        <text class='cuIcon-titles text-orange '></text> 进出账
+      </view>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">黄金</view>
+      <text class="text-gray">23.234万</text>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">银行卡</view>
+      <text class="text-gray">23万</text>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">钯金</view>
+      <text class="text-gray">44万</text>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">结算</view>
+      <text class="text-gray">456万</text>
+    </view>
+
+    <!-- 进出料信息 -->
+    <view class="cu-bar bg-white margin-top">
+      <view class='action text-df'>
+        <text class='cuIcon-titles text-orange '></text> 进出料
+      </view>
+    </view>
+    <view class="cu-form-group flex justify-between align-center">
+      <view class="flex justify-between align-center basis-sm">
+        <text class="title">黄金</text>
+        <text class="content text-gray">33万</text>
+      </view>
+      <view class="flex justify-between align-center basis-sm">
+        <text class="title">铂金</text>
+        <text class="text-gray">23万</text>
+      </view>
+    </view>
+    <view class="cu-form-group flex justify-between align-center">
+      <view class="flex justify-between align-center basis-sm">
+        <text class="title">钯金</text>
+        <text class="content text-gray">33万</text>
+      </view>
+      <view class="flex justify-between align-center basis-sm">
+        <text class="title">白银</text>
+        <text class="text-gray">23万</text>
+      </view>
+    </view>
+
+    <!-- 定价 -->
+    <view class="cu-bar bg-white margin-top">
+      <view class='action text-df'>
+        <text class='cuIcon-titles text-orange '></text> 定价
+      </view>
+    </view>
+    <view class="cu-list grid col-4 no-border flex justify-around">
+      <view class="item">
+        <view class="text-center bg-orange header">黄金</view>
+        <view class="text-center">单价 <text class="text-red">356.2</text></view>
+        <view class="text-center">数量 <text class="text-red">35g</text></view>
+      </view>
+      <view class="item">
+        <view class="text-center bg-orange header">铂金</view>
+        <view class="text-center">单价 <text class="text-red">356.2</text></view>
+        <view class="text-center">数量 <text class="text-red">35g</text></view>
+      </view>
+      <view class="item">
+        <view class="text-center bg-orange header">钯金</view>
+        <view class="text-center">单价 <text class="text-red">356.2</text></view>
+        <view class="text-center">数量 <text class="text-red">35g</text></view>
+      </view>
+      <view class="item">
+        <view class="text-center bg-orange header">白银</view>
+        <view class="text-center">单价 <text class="text-red">356.2</text></view>
+        <view class="text-center">数量 <text class="text-red">35g</text></view>
+      </view>
+    </view>
+    
+    <!-- 应收付账单结余款 -->
+    <view class="cu-bar bg-white margin-top">
+      <view class='action text-df'>
+        <text class='cuIcon-titles text-orange '></text> 应收付账单结余款
+      </view>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">黄金</view>
+      <text class="text-gray">23.234万</text>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">银行卡</view>
+      <text class="text-gray">23万</text>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">钯金</view>
+      <text class="text-gray">44万</text>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">白银</view>
+      <text class="text-gray">456万</text>
+    </view>
+
+    <!-- 检测备注 -->
+    <view class="cu-form-group align-start margin-top">
+      <view class="title">检测备注</view>
+      <textarea class="text-right" maxlength="-1" bindinput="textareaBInput" placeholder="请输入检测备注"></textarea>
+    </view>
+
+    <!-- 提交 -->
+    <view class="margin-tb-lg text-center" wx:key>
+      <button class="cu-btn round bg-yellow" style="width: 80%">提交</button>
+    </view>
+</scroll-view>
+  
