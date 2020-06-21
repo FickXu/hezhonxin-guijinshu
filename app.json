@@ -1,8 +1,9 @@
 {
   "pages": [
     "pages/home/home",
-    "pages/testing-info/testing-info",
+    "pages/wechat-pricing/wechat-pricing",
     "pages/price-list/price-list",
+    "pages/testing-info/testing-info",
     "pages/account-list/account-list",
     "pages/pressing-list/pressing-list",
     "pages/warehouseing-list/warehouseing-list",

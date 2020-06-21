@@ -1,0 +1,85 @@
+<!--pages/insured-list/insured-list.wxml-->
+<cu-custom bgColor="bg-white" isBack="{{true}}">
+	<view slot="content">{{ title }}</view>
+</cu-custom>
+
+<!-- 投保列表 -->
+<scroll-view scroll-y="true">
+
+  <view class="pricing-container margin-lr margin-top">
+    
+    <!-- 快递单号 -->
+    <view class="cu-form-group">
+      <text class="title">客户名</text>
+      <text class="text-gray">张三</text>
+    </view>
+
+    <view class="cu-form-group">
+      <text class="title">结算保证金</text>
+      <text class="text-gray">234万</text>
+    </view>
+
+    <view class="margin-top bg-white padding-top">
+      <view class='action text-df title text-black'>
+        <text class='cuIcon-titles text-orange'></text> 应付料
+      </view>
+    </view>
+    <view class="cu-form-group flex justify-between align-center">
+      <view class="flex justify-between align-center basis-sm">
+        <text class="title">黄金</text>
+        <text class="content text-gray">33万</text>
+      </view>
+      <view class="flex justify-between align-center basis-sm">
+        <text class="title">铂金</text>
+        <text class="text-gray">23万</text>
+      </view>
+    </view>
+    <view class="cu-form-group flex justify-between align-center">
+      <view class="flex justify-between align-center basis-sm">
+        <text class="title">钯金</text>
+        <text class="content text-gray">33万</text>
+      </view>
+      <view class="flex justify-between align-center basis-sm">
+        <text class="title">白银</text>
+        <text class="text-gray">23万</text>
+      </view>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">定价类型</view>
+      <view class="text-right">
+        <radio-group class="block">
+          <radio class="yellow"></radio>回购
+          <radio class="yellow margin-left-sm"></radio>销售
+        </radio-group>
+      </view>
+    </view>
+
+    <view class="margin-top bg-white padding-top">
+      <view class='action text-df text-black'>
+        <text class='cuIcon-titles text-orange'></text> 定价数量
+      </view>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">黄金</view>
+      <input class="text-right" placeholder="请输入黄金数量" type="number"></input>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">铂金</view>
+      <input class="text-right" placeholder="请输入铂金数量" type="number"></input>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">钯金</view>
+      <input class="text-right" placeholder="请输入钯金数量" type="number"></input>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">白银</view>
+      <input class="text-right" placeholder="请输入白银数量" type="number"></input>
+    </view>
+
+    <view class="margin-tb-lg text-center margin-bottom-xl">
+      <button class="cu-btn round bg-yellow" style="width: 80%">确定定价</button>
+    </view>
+  </view>
+  
+</scroll-view>
+  
