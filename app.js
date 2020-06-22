@@ -32,6 +32,7 @@ App({
     defalultImageUrlGia: 'https://dssjewel.com/file/basic/giadefault.png',
     openId: wx.getStorageSync('openId'),
     isIpx: false,   //适配IPhoneX
-    loginCode: 0
+    loginCode: 0,
+    filialeKey: 'SZHZX'
 	}
 })

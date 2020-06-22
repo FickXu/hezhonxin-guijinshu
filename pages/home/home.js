@@ -1,3 +1,5 @@
+import request from '../api/request'
+
 const app = getApp();
 
 Page({
@@ -5,30 +7,16 @@ Page({
    * 页面的初始数据
    */
   data: {
+    filialeKey: app.globalData.filialeKey,
     title: '和众鑫贵金属',
-    PageCur: 'person-center',
-    isLogin: true,
-    loginCode: 0,
-    quoteList: [1, 3,4,4,4,4,44,4,4,4]
+    PageCur: 'home',
+    detail: {}
   },
 
   // 下拉刷新
   // bindrefresherpulling: function () {
   //   console.log(234)
   // },
-
-  // 获取定位信息
-  getLocation: function () {
-    // 获取位置
-    wx.getLocation({
-      type: 'wgs84',
-      success (res) {
-        console.log('get location', res)
-      }
-    })
-    // 通过位置获取附近的店铺列表
-    this.getNearShopsList()
-  },
 
   // 通知登录状态
   login: function (res) {
@@ -79,33 +67,38 @@ Page({
     // }
   },
 
-  // 页面显示时检查登录状态
-  onShow: function () {
-    let self = this
-    if (app.globalData.loginCode == 10007) {
-      self.setData({
-        isLogin: false,
-        loginCode: app.globalData.loginCode
-      })
-      return
-    }
-
-    wx.getStorage({
-      key: 'userInfo',
-      success (res) {
-        // console.log('Page home:', res)
-        self.setData({
-          isLogin: true,
+  // 查询价格
+  queryPrice() {
+    request(`base/price/${this.data.filialeKey}`).then(res => {
+      console.log(res.data)
+      if (res.data.code === 0)
+        this.setData({
+          detail: res.data.data
         })
-        // 缓存到全局
-        app.globalData.userInfo = res.data
-      },
-      fail (err) {
-        console.log('get storage fail:', err)
-        self.setData({
-          isLogin: false
-        })
-      }
     })
+  },
+
+  // 投保页面
+  openInsurePage() {
+    wx.navigateTo({
+      url: '../../pages/insured-info/insured-info'
+    })
+  },
+
+  // 投保页面
+  openPricePage() {
+    wx.navigateTo({
+      url: '../../pages/wechat-pricing/wechat-pricing'
+    })
+  },
+
+  // 页面显示时
+  onShow: function () {
+    // 首次加载
+    this.queryPrice()
+
+    setInterval(() => {
+      this.queryPrice()
+    }, 2000);
   }
 })

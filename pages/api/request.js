@@ -1,7 +1,8 @@
 const app = new getApp()
 
 // 服务器地址
-let serviceUrl = 'https://dssjewel.com/applet/'
+// let serviceUrl = 'https://dssjewel.com/applet/'
+let serviceUrl = 'http://120.25.56.43/wechatapplet/api/'
 
 /* 
 * path, 业务借口的请求路径
@@ -18,7 +19,7 @@ let request = (path, params = {}, type='POST') => {
      return wx.request({
       url: !isUrl ? (serviceUrl + path) : path,
       method: type,
-      data: params,
+      data: {...params, filialeKey: app.globalData.filialeKey},
       success (res) {
         if (res.data.code == 0 || isUrl) {
           resolve(res)

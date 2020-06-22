@@ -11,6 +11,18 @@ Page({
    */
   data: {
     title: '投保信息',
+    params: {
+      // 快递单号
+      courierNumber: '',
+      // 起运港
+      shipmentPort: '',
+      // 保额
+      coverage: '',
+      // 保费
+      premium: '',
+      // 备注
+      coverDesc: '',
+    }
   },
   onLoad() {
   },

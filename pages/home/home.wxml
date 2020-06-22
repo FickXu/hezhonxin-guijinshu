@@ -10,31 +10,64 @@
     enable-flex="{{true}}" 
     >
     <!-- 顶部区域图片 -->
-    <view class="top-area"></view>
+    <view class="top-area" bindtap="openInsurePage"></view>
     <view class="container">
       <!-- 定价信息 -->
-      <image class="price-info" src="../images/view-price.png" mode="aspectFill" lazy-load="true" />
+      <image class="price-info" bindtap="openPricePage" src="../images/view-price.png" mode="aspectFill" lazy-load="true" />
     
       <!-- 报价信息 -->
       <view>
         <view class="offer-info">
           <text class="title">贵金属报价</text>
-          <text class="time">12:27:07</text>
+          <text class="time">{{detail.serverTime}}</text>
         </view>
       </view>
   
       <!-- 报价明细 -->
       <view class="quoted">
         <view class="quoted-list">
-          <view class="quoted-item" wx:for="{{quoteList}}">
+          <view class="quoted-item">
             <view class="name">黄金</view>
             <view class="attr-item">
               <view class="label">回购</view>
-              <view class="value">1465.54</view>
+              <view class="value">{{detail.auBuyPrice}}</view>
             </view>
             <view class="attr-item">
               <view class="label">销售</view>
-              <view class="value">1495.54</view>
+              <view class="value">{{detail.auSendPrice}}</view>
+            </view>
+          </view>
+          <view class="quoted-item">
+            <view class="name">铂金</view>
+            <view class="attr-item">
+              <view class="label">回购</view>
+              <view class="value">{{detail.ptBuyPrice}}</view>
+            </view>
+            <view class="attr-item">
+              <view class="label">销售</view>
+              <view class="value">{{detail.ptSendPrice}}</view>
+            </view>
+          </view>
+          <view class="quoted-item">
+            <view class="name">钯金</view>
+            <view class="attr-item">
+              <view class="label">回购</view>
+              <view class="value">{{detail.pdBuyPrice}}</view>
+            </view>
+            <view class="attr-item">
+              <view class="label">销售</view>
+              <view class="value">{{detail.pdSendPrice}}</view>
+            </view>
+          </view>
+          <view class="quoted-item">
+            <view class="name">白银</view>
+            <view class="attr-item">
+              <view class="label">回购</view>
+              <view class="value">{{detail.agBuyPrice}}</view>
+            </view>
+            <view class="attr-item">
+              <view class="label">销售</view>
+              <view class="value">{{detail.agSendPrice}}</view>
             </view>
           </view>
         </view>
@@ -45,7 +78,7 @@
   <!-- 登录 -->
   <view class="login">
     <text class="warn">温馨提示：以上价格仅供参考</text>
-    <text class="btn-login" bindtap="login">登录</text>
+    <text class="btn-login" bindtap="login">会员登录</text>
   </view>
 </view>
 
