@@ -19,14 +19,18 @@ Page({
   // },
 
   // 通知登录状态
-  login: function (res) {
-    let detail = res.detail
-    if (detail.status == 200) {
-      this.setData({
-        isLogin: true,
-        loginCode: 0
-      })
-    }
+  openLoginPage: function (res) {
+    this.setData({
+      PageCur: 'login'
+    })
+    
+    // let detail = res.detail
+    // if (detail.status == 200) {
+    //   this.setData({
+    //     isLogin: true,
+    //     loginCode: 0
+    //   })
+    // }
   },
 
   // 页面导航
@@ -97,8 +101,8 @@ Page({
     // 首次加载
     this.queryPrice()
 
-    setInterval(() => {
-      this.queryPrice()
-    }, 2000);
+    // setInterval(() => {
+    //   this.queryPrice()
+    // }, 2000);
   }
 })

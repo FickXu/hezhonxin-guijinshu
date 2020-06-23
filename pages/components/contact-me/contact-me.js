@@ -12,23 +12,23 @@ Component({
         title: '联系我们',
       },
       logoImg: "",
-      qqNo: "",
-      synopsis: "",
-      telNo: "",
-      wechatNo: ""
+      qqNumber: "",
+      companyProfile: "",
+      mobileNumber: "",
+      wechatNumber: ""
   },
   ready () {
     // 获取小程序页面基本参数
-    request('basic/appletviewinfo').then(res => {
+    request('basic/info').then(res => {
       console.log(res)
       if (res.data.code === 0) {
         let data = res.data.data
         this.setData({
           logoImg: data.logoImg,
-          qqNo: data.qqNo,
-          synopsis: data.synopsis,
-          telNo: data.telNo,
-          wechatNo: data.wechatNo
+          qqNo: data.qqNumber,
+          synopsis: data.companyProfile,
+          telNo: data.mobileNumber,
+          wechatNo: data.wechatNumber
         })
       }
     })

@@ -18,24 +18,24 @@
             </view>
         </view>
         <!-- telphone -->
-        <view class="cu-item arrow" bindtap="callPhone" data-text="{{telNo}}">
+        <view class="cu-item arrow" bindtap="callPhone" data-text="{{mobileNumber}}">
             <view class="content">
                 <text class="custome-icon-size cuIcon-dianhua text-yellow"></text>电话
-                <text class="text-grey">{{ telNo }}</text>
+                <text class="text-grey">{{ mobileNumber }}</text>
             </view>
         </view>
         <!-- wechat -->
-        <view class="cu-item arrow" bindtap="copyText" data-text="{{wechatNo}}">
+        <view class="cu-item arrow" bindtap="copyText" data-text="{{wechatNumber}}">
             <view class="content">
                 <text class="custome-icon-size cuIcon-weixin text-yellow"></text>微信
-                <text class="text-grey">{{ wechatNo }}</text>
+                <text class="text-grey">{{ wechatNumber }}</text>
             </view>
         </view>
         <!-- QQ -->
-        <view class="cu-item arrow" bindtap="copyText" data-text="{{qqNo}}">
+        <view class="cu-item arrow" bindtap="copyText" data-text="{{qqNumber}}">
             <view class="content">
                 <text class="custome-icon-size cuIcon-markfill text-yellow"></text>QQ
-                <text class="text-grey">{{ qqNo }}</text>
+                <text class="text-grey">{{ qqNumber }}</text>
             </view>
         </view>
         <view class="cu-item"></view>
@@ -44,7 +44,7 @@
     <view class="company-profile">
         <view class="company-profile-title">公司简介</view>
         <view class="company-profile-content">
-            {{ synopsis }}
+            {{ companyProfile }}
         </view>
     </view>
 </view>
