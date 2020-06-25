@@ -20,8 +20,8 @@ Page({
 
   // 通知登录状态
   openLoginPage: function (res) {
-    this.setData({
-      PageCur: 'login'
+    wx.navigateTo({
+      url: '../login/login'
     })
     
     // let detail = res.detail

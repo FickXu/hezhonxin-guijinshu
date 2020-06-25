@@ -1,28 +1,26 @@
 <cu-custom bgColor="bg-white" isBack="{{true}}">
 	<view slot="content">{{ title }}</view>
 </cu-custom>
-<view class="login-out-area">
-  <view class="align-center login-logo">
+
+<view class="login-page">
+  <view class="logo">
     <image class="logo" src="{{ loginPageInfo.iconUrl }}"></image>
   </view>
-  <view class="login-btn">
-    <button class="button"  open-type='getUserInfo' bindgetuserinfo="bindgetuserinfo">{{ loginPageInfo.btnText }} </button>
-  </view>
-  <view class="bg-login">
-    <image class="bg-img" src="../images/bg-login.png" />
-  </view>
-</view>
-
-<view class="cu-modal {{isAuthorPhone?'show':''}}">
-  <view class="cu-dialog bg-white">
-    <view class="author-phone-title">和众鑫贵金属</view>
-    <view class="author-phone-desc">和众鑫贵金属需要您授权来获取手机号</view>
-    <view class="cu-bar bg-white btn-argee">
-      <button
-        class="action margin-0 flex-sub solid-left bg-gold btn-i-know"
-        open-type="getPhoneNumber"
-        bindgetphonenumber="getPhoneNumber"
-        >同意</button>
+  
+  <view class="form">
+    <view class="item border">
+      <view class="icon"><image src="../images/icon-account.png" />
+        </view>
+      <input class="ipt" type="text" placeholder="请输入账号" value="{{params.userAccount}}" />
+    </view>
+    <view class="item border">
+      <view class="icon"><image src="../images/icon-pw.png" />
+        </view>
+      <input class="ipt" type="password" placeholder="请输入密码" value="{{params.password}}" />
+    </view>
+    <view class="item" style="margin-top: 20px">
+      <button class="btn" bindtap="userLogin">登录</button>
     </view>
   </view>
+  
 </view>
