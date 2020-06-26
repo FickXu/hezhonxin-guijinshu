@@ -18,26 +18,13 @@ Component({
 		}
 	},
 	ready: function () {
-		let self = this
-		// console.log(app.globalData)
-		// let userInfo = {
-		// 	avatarUrl: "https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTINhLTx15w3Bm9iamcriaia0ELLTnyXtUJD9wHibQSOabeVSAqMmaDp8L1zTV1R2DlW9YnI5kOJ1fTlLg/132",
-		// 	city: "Shenzhen",
-		// 	country: "China",
-		// 	gender: 1,
-		// 	language: "zh_CN",
-		// 	nickName: "Fick",
-		// 	province: "Guangdong"
-		// }
-		
-		// wx.getStorage({
-		// 	key: 'userInfo',
-		// 	success (res) {
-		// 		self.setData({
-		// 			userInfo: res.data
-		// 		})
-		// 	}
-		// })
+		let userInfo = {
+			...this.data.userInfo,
+			...app.globalData.userInfo
+		}
+		this.setData({
+			userInfo: userInfo
+		})
 	},
 	methods: {
 		// 跳转页面

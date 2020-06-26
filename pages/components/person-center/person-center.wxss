@@ -33,3 +33,10 @@
   border-top-right-radius: 20rpx;
   margin-top: -20rpx;
 }
+.content {
+  line-height: initial!important;
+}
+.content image {
+  width: 1.3rem !important;
+  height: 1.3rem !important;
+}

@@ -31,7 +31,10 @@ Page({
         // 缓存到全局
         app.globalData.userInfo = res.data.data
         // 缓存到本地存储
-        wx.setStorage()
+        wx.setStorage({
+          key: 'userInfo',
+          data: res.data.data
+        })
         // {name: "戴宇斌测试", headPortrait: null, sex: 0, age: null, birthday: ""}
         wx.showToast({
           icon: 'success',

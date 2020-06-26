@@ -9,29 +9,29 @@
   <!-- 结束时间 -->
   <view class="cu-form-group">
     <view class="title">
-      <text class="text-red">代为</text>
+      <text class="text-red">{{detail.customerName}}</text>
       客户的
-      <text class="text-red">3094509345809</text>
+      <text class="text-red">{{detail.courierNumber}}</text>
       快递单成色信息
     </view>
   </view>
-  <view class="tag-box padding-lr bg-white">
-    <view class="zjs-tag bg-light-yellow">料类别</view>
-    <view class="zjs-tag bg-light-yellow">料类别</view>
-    <view class="zjs-tag bg-light-yellow">料类别</view>
-    <view class="zjs-tag bg-light-yellow">料类别</view>
-    <view class="zjs-tag bg-light-yellow">料类别</view>
-    <view class="zjs-tag bg-light-yellow">料类别</view>
-    <view class="zjs-tag bg-light-yellow">料类别</view>
-  </view>
-  <view class="tag-box padding-lr bg-white">
-    <view class="zjs-tag bg-gray">料类别</view>
-    <view class="zjs-tag bg-gray">料类别</view>
-    <view class="zjs-tag bg-gray">料类别</view>
-    <view class="zjs-tag bg-gray">料类别</view>
-    <view class="zjs-tag bg-gray">料类别</view>
-    <view class="zjs-tag bg-gray">料类别</view>
-    <view class="zjs-tag bg-gray">料类别</view>
+  <view class="padding-lr" wx:if="{{detail.meterialInfoList.length>0}}">
+    <view class="bg-white" wx:for="{{detail.meterialInfoList}}">
+      <!-- 料明细 -->
+      <view class="tag-box">
+        <view class="zjs-tag bg-light-yellow">{{item.materialTypeName}}</view>
+        <view class="zjs-tag bg-light-yellow">{{item.metalsBigClass}}</view>
+        <view class="zjs-tag bg-light-yellow">{{item.metalsSmallCalssName}}</view>
+        <view class="zjs-tag bg-light-yellow">{{item.grossWeight}}</view>
+        <view class="zjs-tag bg-light-yellow">{{item.heavyPlate}}</view>
+        <view class="zjs-tag bg-light-yellow">{{item.theColour}}</view>
+        <view class="zjs-tag bg-light-yellow">{{item.netWeight}}</view>
+      </view>
+      <!-- <view class="tag-box">
+        <view class="zjs-tag bg-gray">{{item.auTotalNetWeight}}</view>
+      </view> -->
+    </view>
+
   </view>
   
   <!-- 定价 -->
@@ -42,19 +42,19 @@
     <view class="flex justify-between margin-top">
       <view class="tag-box">
         <view class="label">黄金</view>
-        <view class="zjs-tag bg-gray margin-left-sm">9</view>
+        <view class="zjs-tag bg-gray margin-left-sm">{{item.auTotalHeavyPlate}}</view>
       </view>
       <view class="tag-box">
         <view class="label">钯金</view>
-        <view class="zjs-tag bg-gray margin-left-sm">9</view>
+        <view class="zjs-tag bg-gray margin-left-sm">{{item.ptTotalHeavyPlate}}</view>
       </view>
       <view class="tag-box">
         <view class="label">铂金</view>
-        <view class="zjs-tag bg-gray margin-left-sm">9</view>
+        <view class="zjs-tag bg-gray margin-left-sm">{{item.pdTotalHeavyPlate}}</view>
       </view>
       <view class="tag-box">
         <view class="label">白银</view>
-        <view class="zjs-tag bg-gray margin-left-sm">9</view>
+        <view class="zjs-tag bg-gray margin-left-sm">{{item.agTotalHeavyPlate}}</view>
       </view>
     </view>
     
@@ -68,19 +68,19 @@
     <view class="flex justify-between margin-top">
       <view class="tag-box">
         <view class="label">黄金</view>
-        <view class="zjs-tag bg-gray margin-left-sm">9</view>
+        <view class="zjs-tag bg-gray margin-left-sm">{{item.auTotalNetWeight}}</view>
       </view>
       <view class="tag-box">
         <view class="label">钯金</view>
-        <view class="zjs-tag bg-gray margin-left-sm">9</view>
+        <view class="zjs-tag bg-gray margin-left-sm">{{item.ptTotalNetWeight}}</view>
       </view>
       <view class="tag-box">
         <view class="label">铂金</view>
-        <view class="zjs-tag bg-gray margin-left-sm">9</view>
+        <view class="zjs-tag bg-gray margin-left-sm">{{item.pdTotalNetWeight}}</view>
       </view>
       <view class="tag-box">
         <view class="label">白银</view>
-        <view class="zjs-tag bg-gray margin-left-sm">9</view>
+        <view class="zjs-tag bg-gray margin-left-sm">{{item.agTotalNetWeight}}</view>
       </view>
     </view>
     

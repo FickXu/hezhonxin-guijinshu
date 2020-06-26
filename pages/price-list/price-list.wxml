@@ -12,16 +12,16 @@
     <!-- 快递单号 -->
     <view class="cu-form-group">
       <view class="title">定价单号</view>
-      <input class="text-right" placeholder="请输入定价单号"></input>
+      <input class="text-right" placeholder="请输入定价单号" bindinput="bindInput" value="{{params.priceListNo}}" data-key="priceListNo"></input>
     </view>
 
 
     <view class="cu-form-group">
       <view class="title">压料状态</view>
       <view class="text-right">
-        <radio-group class="block">
-          <radio class="yellow"></radio>全部
-          <radio class="yellow margin-left-sm"></radio>销售
+        <radio-group class="block" bindchange="bindchange">
+          <radio class="yellow" value="0"></radio>全部
+          <radio class="yellow margin-left-sm" value="1"></radio>销售
         </radio-group>
       </view>
     </view>
@@ -29,9 +29,9 @@
     <!-- 开始时间 -->
     <view class="cu-form-group">
       <view class="title">开始时间</view>
-      <picker mode="date" value="{{date}}" start="2015-09-01" end="2020-09-01" bindchange="DateChange">
+      <picker mode="date" value="{{params.startTime}}" start="2015-09-01" end="2020-09-01" bindchange="DateChange">
         <view class="picker">
-          {{date}}
+          {{params.startTime}}
         </view>
       </picker>
     </view>
@@ -39,27 +39,27 @@
     <!-- 结束时间 -->
     <view class="cu-form-group">
       <view class="title">结束时间</view>
-      <picker mode="date" value="{{date1}}" start="2015-09-01" end="2020-09-01" bindchange="DateChange1">
+      <picker mode="date" value="{{params.endTime}}" start="2015-09-01" end="2020-09-01" bindchange="DateChange1">
         <view class="picker">
-          {{date1}}
+          {{params.endTime}}
         </view>
       </picker>
     </view>
 
     <view class="margin-tb-lg text-center">
-      <button class="cu-btn round bg-yellow" style="width: 80%">查询</button>
+      <button class="cu-btn round bg-yellow" style="width: 80%" bindtap="queryList">查询</button>
     </view>
   </view>
   
-  <view class="margin-bottom" wx:for="{{[1,2,3,4]}}">
+  <view class="margin-bottom" wx:for="{{list}}">
     <!-- 表单 -->
     <view class="cu-form-group">
       <text class="title">定价单号</text>
-      <text class="text-gray">2859834789349384</text>
+      <text class="text-gray">{{item.priceListNo}}</text>
     </view>
     <view class="cu-form-group">
       <text class="title">用户</text>
-      <text class="text-gray">赵四</text>
+      <text class="text-gray">{{item.customerName}}</text>
     </view>
   
     <!-- 定价 -->
@@ -71,23 +71,23 @@
     <view class="cu-list grid col-4 no-border flex justify-around">
       <view class="item">
         <view class="text-center bg-orange header">黄金</view>
-        <view class="text-center">单价 <text class="text-red">356.2</text></view>
-        <view class="text-center">数量 <text class="text-red">35g</text></view>
+        <view class="text-center">单价 <text class="text-red">{{item.drauPrice}}</text></view>
+        <view class="text-center">数量 <text class="text-red">{{item.drauPriceWeight}}</text></view>
       </view>
       <view class="item">
         <view class="text-center bg-orange header">铂金</view>
-        <view class="text-center">单价 <text class="text-red">356.2</text></view>
-        <view class="text-center">数量 <text class="text-red">35g</text></view>
+        <view class="text-center">单价 <text class="text-red">{{item.drptPrice}}</text></view>
+        <view class="text-center">数量 <text class="text-red">{{item.drptPriceWeight}}</text></view>
       </view>
       <view class="item">
         <view class="text-center bg-orange header">钯金</view>
-        <view class="text-center">单价 <text class="text-red">356.2</text></view>
-        <view class="text-center">数量 <text class="text-red">35g</text></view>
+        <view class="text-center">单价 <text class="text-red">{{item.drpdPrice}}</text></view>
+        <view class="text-center">数量 <text class="text-red">{{item.drpdPriceWeight}}</text></view>
       </view>
       <view class="item">
         <view class="text-center bg-orange header">白银</view>
-        <view class="text-center">单价 <text class="text-red">356.2</text></view>
-        <view class="text-center">数量 <text class="text-red">35g</text></view>
+        <view class="text-center">单价 <text class="text-red">{{item.dragPrice}}</text></view>
+        <view class="text-center">数量 <text class="text-red">{{item.dragPriceWeight}}</text></view>
       </view>
     </view>
     <view class="cu-form-group bg-white">
@@ -98,29 +98,29 @@
     <view class="cu-list grid col-4 no-border flex justify-around">
       <view class="item">
         <view class="text-center bg-orange header">黄金</view>
-        <view class="text-center">单价 <text class="text-red">356.2</text></view>
-        <view class="text-center">数量 <text class="text-red">35g</text></view>
+        <view class="text-center">单价 <text class="text-red">{{item.dcauPrice}}</text></view>
+        <view class="text-center">数量 <text class="text-red">{{item.dcauPriceWeight}}</text></view>
       </view>
       <view class="item">
         <view class="text-center bg-orange header">铂金</view>
-        <view class="text-center">单价 <text class="text-red">356.2</text></view>
-        <view class="text-center">数量 <text class="text-red">35g</text></view>
+        <view class="text-center">单价 <text class="text-red">{{item.dcptPrice}}</text></view>
+        <view class="text-center">数量 <text class="text-red">{{item.dcptPriceWeight}}</text></view>
       </view>
       <view class="item">
         <view class="text-center bg-orange header">钯金</view>
-        <view class="text-center">单价 <text class="text-red">356.2</text></view>
-        <view class="text-center">数量 <text class="text-red">35g</text></view>
+        <view class="text-center">单价 <text class="text-red">{{item.dcpdPrice}}</text></view>
+        <view class="text-center">数量 <text class="text-red">{{item.dcpdPriceWeight}}</text></view>
       </view>
       <view class="item">
         <view class="text-center bg-orange header">白银</view>
-        <view class="text-center">单价 <text class="text-red">356.2</text></view>
-        <view class="text-center">数量 <text class="text-red">35g</text></view>
+        <view class="text-center">单价 <text class="text-red">{{item.dcagPrice}}</text></view>
+        <view class="text-center">数量 <text class="text-red">{{item.dcagPriceWeight}}</text></view>
       </view>
     </view>
   
     <view class="cu-form-group">
       <text class="title">状态</text>
-      <text class="text-gray">已结束</text>
+      <text class="text-gray">{{item.priceListStatueName}}</text>
     </view>
     <view class="cu-form-group">
       <text class="title">时间</text>

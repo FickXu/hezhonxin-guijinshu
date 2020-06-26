@@ -9,12 +9,13 @@
   font-weight: 700;
 }
 .scrollPage {
-  height: calc(100vh - calc(100rpx + env(safe-area-inset-bottom) / 2) - 60rpx);
+  height: calc(100vh - calc(100rpx + env(safe-area-inset-bottom) / 2));
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
   width: 100%;
   background-color: #ffffff;
+  padding-bottom: 60rpx;
 }
 .scrollPage .container {
   width: 100%;

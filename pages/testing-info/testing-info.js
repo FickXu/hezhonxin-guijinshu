@@ -11,20 +11,21 @@ Page({
    */
   data: {
     title: '检测详情',
-    date: '2020-6-20',
-    date1: '2020-6-20'
+    detail: {}
   },
   onLoad() {
-  },
-  DateChange(e) {
-    this.setData({
-      date: e.detail.value
+    const eventChannel = this.getOpenerEventChannel()
+    eventChannel.on('sendData', function(data) {
+      let params = {
+        ...data.data
+      }
+      request('customer/instorageinfo', params).then(res => {
+        if (res.data.code == 0) {
+          this.setData({
+            detail: res.data.data
+          })
+        }
+      })
     })
   },
-  DateChange1(e) {
-    this.setData({
-      date1: e.detail.value
-    })
-  },
-  textareaBInput() {}
 })

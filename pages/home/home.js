@@ -10,27 +10,16 @@ Page({
     filialeKey: app.globalData.filialeKey,
     title: '和众鑫贵金属',
     PageCur: 'home',
-    detail: {}
+    detail: {},
+    // 是否已经登录
+    isLogin: Object.keys(wx.getStorageSync('userInfo')).length > 0 ? true : false
   },
-
-  // 下拉刷新
-  // bindrefresherpulling: function () {
-  //   console.log(234)
-  // },
 
   // 通知登录状态
   openLoginPage: function (res) {
     wx.navigateTo({
       url: '../login/login'
     })
-    
-    // let detail = res.detail
-    // if (detail.status == 200) {
-    //   this.setData({
-    //     isLogin: true,
-    //     loginCode: 0
-    //   })
-    // }
   },
 
   // 页面导航
@@ -101,8 +90,9 @@ Page({
     // 首次加载
     this.queryPrice()
 
-    // setInterval(() => {
-    //   this.queryPrice()
-    // }, 2000);
-  }
+    setInterval(() => {
+      this.queryPrice()
+    }, 2000)
+    
+  },
 })

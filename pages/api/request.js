@@ -19,7 +19,11 @@ let request = (path, params = {}, type='POST') => {
      return wx.request({
       url: !isUrl ? (serviceUrl + path) : path,
       method: type,
-      data: {...params, filialeKey: app.globalData.filialeKey},
+      data: {
+        ...params,
+        filialeKey: app.globalData.filialeKey,
+        openId: app.globalData.openId
+      },
       success (res) {
         if (res.data.code == 0 || isUrl) {
           resolve(res)
@@ -45,6 +49,13 @@ let request = (path, params = {}, type='POST') => {
                   })
                 }
               }
+            })
+            return
+          }
+          if (res.data.code == 10003 || res.data.code == 10001) {
+            wx.showToast({
+              title: res.data.msg,
+              icon: 'none'
             })
             return
           }

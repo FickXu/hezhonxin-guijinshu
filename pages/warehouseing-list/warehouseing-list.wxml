@@ -11,59 +11,59 @@
     <!-- 快递单号 -->
     <view class="cu-form-group">
       <view class="title">快递单号</view>
-      <input class="text-right" placeholder="请输入快递单号"></input>
+      <input class="text-right" placeholder="请输入快递单号" bindinput="bindInput" value="{{params.courierNumber}}" data-key="courierNumber"></input>
     </view>
 
     <!-- 备注说明 -->
-    <view class="cu-form-group">
+    <!-- <view class="cu-form-group">
       <view class="title">备注说明</view>
       <input class="text-right" placeholder="请输入备注说明"></input>
-    </view>
+    </view> -->
 
     <view class="margin-tb-lg text-center" wx:key>
-      <button class="cu-btn round bg-yellow" style="width: 80%">查询</button>
+      <button class="cu-btn round bg-yellow" style="width: 80%" bindtap="queryList">查询</button>
     </view>
   </view>
 
   <!-- 结果 -->
-  <view class="search-result margin-top-xl">
+  <view class="search-result margin-top-xl" wx:if="{{list.length>0}}">
 
-    <view wx:for="{{[1, 2,3,4,5]}}" class="margin-bottom-lg">
+    <view wx:for="{{list}}" class="margin-bottom-lg">
       <view class="cu-form-group">
         <view class="title">客户名称</view>
-        <text class="text-gray">张三丰</text>
+        <text class="text-gray">{{item.customerName}}</text>
       </view>
       <view class="cu-form-group">
         <view class="title">快递单号</view>
-        <text class="text-gray">2020236232342342320</text>
+        <text class="text-gray">{{item.courierNumber}}</text>
       </view>
       <view class="cu-form-group">
-        <view class="title">加测备注</view>
-        <text class="text-gray">2020236232342342320</text>
+        <view class="title">检测备注</view>
+        <text class="text-gray">{{item.enterDesc}}</text>
       </view>
       <view class="cu-form-group">
         <view class="title">投保备注</view>
-        <text class="text-gray">2020236232342342320</text>
+        <text class="text-gray">{{item.coverDesc}}</text>
       </view>
       <view class="cu-form-group">
         <view class="title">毛重录入</view>
-        <text class="text-gray">2020236232342342320</text>
+        <text class="text-gray">{{item.enterTimeRough}}</text>
       </view>
       <view class="cu-form-group">
         <view class="title">板重录入</view>
-        <text class="text-gray">2020236232342342320</text>
+        <text class="text-gray">{{item.enterTimeTidiness}}</text>
       </view>
       <view class="cu-form-group">
         <view class="title">成色录入</view>
-        <text class="text-gray">2020236232342342320</text>
+        <text class="text-gray">{{item.enterTimeAlloy}}</text>
       </view>
       <view class="cu-form-group">
         <view class="title">确认入库</view>
-        <text class="text-gray">2020236232342342320</text>
+        <text class="text-gray">{{item.enterTimePut}}</text>
       </view>
 
       <view class="margin-top-lg text-center" wx:key>
-        <button class="cu-btn round bg-orange" style="width: 80%">查看详情</button>
+        <button class="cu-btn round bg-orange" style="width: 80%" bindtap="openDetailPage" data-key="{{item.courierNumber}}">查看详情</button>
       </view>
     </view>
 

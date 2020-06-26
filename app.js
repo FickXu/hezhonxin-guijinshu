@@ -2,6 +2,14 @@
 App({
 	onLaunch: function() {
 
+    // // 获取缓存的登录信息
+    // wx.getStorage({
+    //   key: 'userInfo',
+    //   success: data=> {
+    //     this.globalData.userInfo = data.data
+    //   }
+    // })
+
     wx.getSystemInfo({
       success: e => {
         this.globalData.StatusBar = e.statusBarHeight;
@@ -21,7 +29,7 @@ App({
     })
   },
 	globalData: {
-    userInfo: null,
+    userInfo: wx.getStorageSync('userInfo') || {},
     // 默认图片-联系我们
     defalultImageUrlLXWM: 'https://dssjewel.com/file/basic/lxwm.png',
     // 默认图片-客服跟进
@@ -30,7 +38,7 @@ App({
     defalultImageUrlTz: 'https://dssjewel.com/file/basic/tzdefault.png',
     // 默认图片-gia
     defalultImageUrlGia: 'https://dssjewel.com/file/basic/giadefault.png',
-    openId: wx.getStorageSync('openId'),
+    openId: wx.getStorageSync('openId') || 'welkrjlwke24sd',
     isIpx: false,   //适配IPhoneX
     loginCode: 0,
     filialeKey: 'SZHZX'
