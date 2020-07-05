@@ -11,6 +11,14 @@ Page({
     title: '和众鑫贵金属',
     PageCur: 'home',
     detail: {},
+    status1: '',
+    status2: '',
+    status3: '',
+    status4: '',
+    status5: '',
+    status6: '',
+    status7: '',
+    status8: '',
     // 是否已经登录
     isLogin: Object.keys(wx.getStorageSync('userInfo')).length > 0 ? true : false
   },
@@ -21,7 +29,9 @@ Page({
       url: '../login/login'
     })
   },
-
+  bindgetuserinfo(e) {
+    console.log(e)
+  },
   // 页面导航
   routerPage: function(event) {
     let self = this
@@ -63,11 +73,21 @@ Page({
   // 查询价格
   queryPrice() {
     request(`base/price/${this.data.filialeKey}`).then(res => {
-      console.log(res.data)
-      if (res.data.code === 0)
+      if (res.data.code === 0) {
+        let detail = res.data.data
         this.setData({
-          detail: res.data.data
+          status1: detail.auBuyPrice > this.data.detail.auBuyPrice ? 'green' : (detail.auBuyPrice < this.data.detail.auBuyPrice ? 'red' : ''),
+          status2: detail.auSendPrice > this.data.detail.auSendPrice ? 'green' : (detail.auSendPrice < this.data.detail.auSendPrice ? 'red' : ''),
+          status3: detail.ptBuyPrice > this.data.detail.ptBuyPrice ? 'green' : (detail.ptBuyPrice < this.data.detail.ptBuyPrice ? 'red' : ''),
+          status4: detail.ptSendPrice > this.data.detail.ptSendPrice ? 'green' : (detail.ptSendPrice < this.data.detail.ptSendPrice ? 'red' : ''),
+          status5: detail.pdBuyPrice > this.data.detail.pdBuyPrice ? 'green' : (detail.pdBuyPrice < this.data.detail.pdBuyPrice ? 'red' : ''),
+          status6: detail.pdSendPrice > this.data.detail.pdSendPrice ? 'green' : (detail.pdSendPrice < this.data.detail.pdSendPrice ? 'red' : ''),
+          status7: detail.agBuyPrice > this.data.detail.agBuyPrice ? 'green' : (detail.agBuyPrice < this.data.detail.agBuyPrice ? 'red' : ''),
+          status8: detail.agSendPrice > this.data.detail.agSendPrice ? 'green' : (detail.agSendPrice < this.data.detail.agSendPrice ? 'red' : ''),
+          detail: detail
         })
+
+      }
     })
   },
 
@@ -90,9 +110,9 @@ Page({
     // 首次加载
     this.queryPrice()
 
-    setInterval(() => {
-      this.queryPrice()
-    }, 2000)
+    // setInterval(() => {
+    //   this.queryPrice()
+    // }, 2000)
     
   },
 })

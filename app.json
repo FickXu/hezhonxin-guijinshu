@@ -1,13 +1,13 @@
 {
   "pages": [
     "pages/home/home",
+    "pages/login/login",
     "pages/account-list/account-list",
     "pages/pressing-list/pressing-list",
     "pages/price-list/price-list",
     "pages/warehouseing-list/warehouseing-list",
     "pages/insured-list/insured-list",
     "pages/insured-info/insured-info",
-    "pages/login/login",
     "pages/wechat-pricing/wechat-pricing",
     "pages/testing-info/testing-info",
     "pages/address-list/address-list"

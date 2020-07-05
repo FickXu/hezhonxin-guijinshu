@@ -19,7 +19,7 @@ Component({
   },
   ready () {
     // 获取小程序页面基本参数
-    request('basic/info').then(res => {
+    request('base/info').then(res => {
       console.log(res)
       if (res.data.code === 0) {
         let data = res.data.data
@@ -30,6 +30,18 @@ Component({
           telNo: data.mobileNumber,
           wechatNo: data.wechatNumber
         })
+        // appId: "wx838aed569cf27546"
+        // appSecret: "5470343563c3212a2f7d7b7c040c8bf7"
+        // companyProfile: null
+        // destinationPort: ""
+        // filialeKey: "SZHZX"
+        // isInsure: 1
+        // isPricing: 1
+        // mobileNumber: ""
+        // premiumRate: 0.0004
+        // qqNumber: ""
+        // recipients: ""
+        // wechatNumber: ""
       }
     })
   },

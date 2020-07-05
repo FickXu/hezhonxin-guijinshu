@@ -20,6 +20,7 @@
     </view>
     <view class="item" style="margin-top: 20px">
       <button class="btn" bindtap="userLogin">登录</button>
+      <!-- <button open-type="getUserInfo" class="btn" bindgetuserinfo="bindgetuserinfo">登录</button> -->
     </view>
   </view>
   

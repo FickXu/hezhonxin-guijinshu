@@ -16,18 +16,26 @@ Page({
     params: {
       password: '2eq34213',
       filialeKey: app.globalData.filialeKey,
-      userAccount: 'SZHZX001071',
+      userAccount: 'SHZHZX001071',
       openId: '2342342534534',
     }
   },
 
   // 用户登录
+  bindgetuserinfo(e) {
+    this.setData({
+      'loginPageInfo.encryptedData': e.detail.encryptedData,
+      'loginPageInfo.iv': e.detail.iv
+    })
+    this._getUserInfo()
+  },
+
   userLogin() {
-    let params = this.data.params
-    request('base/login', params).then(res => {
+
+    request('base/login', this.data.params).then(res => {
       if (res.data.code === 0) {
         console.log(res.data.data)
-
+  
         // 缓存到全局
         app.globalData.userInfo = res.data.data
         // 缓存到本地存储
@@ -46,6 +54,29 @@ Page({
           }
         })
       }
+    })
+  },
+
+  // 微信登录获取code
+  _wxLogin: function() {
+    return new Promise((resolve, reject) => {
+      // 微信登录获取code
+      wx.login({
+        success: res => {
+          let params = {
+            code: res.code
+          }
+          // 通过code获取session_key和openid
+          request('base/miniLogin', params).then(res => {
+            if (res.data.code == 0) {
+              let data = JSON.parse(res.data.data)
+              resolve(Object.assign(params, data))
+            } else {
+              reject(res)
+            }
+          })
+        }
+      })
     })
   },
   // 微信登录

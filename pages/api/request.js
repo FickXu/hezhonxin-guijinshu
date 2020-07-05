@@ -40,7 +40,7 @@ let request = (path, params = {}, type='POST') => {
                     success () {
 
                       wx.navigateTo({
-                        url: '../../pages/home/home',
+                        url: '../login/login',
                         success: function (res) {
                           app.globalData.loginCode = 10007
                         }
