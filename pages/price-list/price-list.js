@@ -25,39 +25,40 @@ Page({
       // 定价类别
       priceListType: '',
       // 开始时间
-      startTime: '2020-6-26',
+      startTime: '',
       // 结束时间
-      endTime: '2020-6-26',
+      endTime: '',
     },
     list: [
-      // {
-      //   priceListNo: 20495304,
-      //   customerId: 1,
-      //   customerName: 'niubi',
-      //   filialeKey: 'niubi',
-      //   priceListStatueName: '已结束',
-      //   drauPrice: '67万',
-      //   drauPriceWeight: '1000g',
-      //   drptPrice: '67万',
-      //   drptPriceWeight: '1000g',
-      //   drpdPrice: '67万',
-      //   drpdPriceWeight: '1000g',
-      //   dragPrice: '67万',
-      //   dragPriceWeight: '1000g',
-      //   dcauPrice: '67万',
-      //   dcauPriceWeight: '1000g',
-      //   dcptPrice: '67万',
-      //   dcptPriceWeight: '1000g',
-      //   dcpdPrice: '67万',
-      //   dcpdPriceWeight: '1000g',
-      //   dcagPrice: '67万',
-      //   dcagPriceWeight: '1000g',
-      // }
-    ]
+      {
+        priceListNo: 20495304,
+        customerId: 1,
+        customerName: 'niubi',
+        filialeKey: 'niubi',
+        priceListStatueName: '已结束',
+        drauPrice: '67万',
+        drauPriceWeight: '1000g',
+        drptPrice: '67万',
+        drptPriceWeight: '1000g',
+        drpdPrice: '67万',
+        drpdPriceWeight: '1000g',
+        dragPrice: '67万',
+        dragPriceWeight: '1000g',
+        dcauPrice: '67万',
+        dcauPriceWeight: '1000g',
+        dcptPrice: '67万',
+        dcptPriceWeight: '1000g',
+        dcpdPrice: '67万',
+        dcpdPriceWeight: '1000g',
+        dcagPrice: '67万',
+        dcagPriceWeight: '1000g',
+      }
+    ],
+    rtStatus: false
   },
   
   onLoad() {
-    this.queryList()
+    // this.queryList()
   },
 
   DateChange(e) {
@@ -69,6 +70,42 @@ Page({
   DateChange1(e) {
     this.setData({
       'params.endTime': e.detail.value
+    })
+  },
+
+  // 离开顶部时触发
+  bindrefresherpulling() {
+    this.setData({
+      'params.currentPage': 1,
+      'params.pagesize': 10,
+      'params.priceListNo': '',
+      'params.customerId': '',
+      'params.customerName': '',
+      'params.priceListType': '',
+      'params.startTime': '',
+      'params.endTime': '',
+    })
+
+    setTimeout(() => {
+      this.setData({
+        rtStatus: false
+      })
+    }, 2000);
+    // this.queryList()
+  },
+  
+  // 滚动到底部时触发
+  bindscrolltolower() {
+    this.setData({
+      'params.currentPage': ++this.data.params.currentPage,
+    })
+
+    console.log(this.data.params.currentPage)
+
+    let arr = this.data.list
+    arr.push(this.data.list[0])
+    this.setData({
+      list: arr
     })
   },
   

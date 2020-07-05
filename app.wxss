@@ -4270,3 +4270,6 @@ scroll-view.cu-steps .cu-item {
   line-height: 18px;
   color: #cccccc;
 }
+.picker {
+  min-height: 100rpx;
+}
