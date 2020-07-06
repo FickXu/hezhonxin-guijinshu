@@ -11,12 +11,12 @@
     <!-- 快递单号 -->
     <view class="cu-form-group">
       <text class="title">客户名</text>
-      <text class="text-gray">张三</text>
+      <text class="text-gray">{{name}}</text>
     </view>
 
     <view class="cu-form-group">
       <text class="title">结算保证金</text>
-      <text class="text-gray">234万</text>
+      <text class="text-gray">{{marginBalance}}元</text>
     </view>
 
     <view class="margin-top bg-white padding-top">
@@ -27,29 +27,29 @@
     <view class="cu-form-group flex justify-between align-center">
       <view class="flex justify-between align-center basis-sm">
         <text class="title">黄金</text>
-        <text class="content text-gray">33万</text>
+        <text class="content text-gray">{{stockAu}}克</text>
       </view>
       <view class="flex justify-between align-center basis-sm">
         <text class="title">铂金</text>
-        <text class="text-gray">23万</text>
+        <text class="text-gray">{{stockPt}}克</text>
       </view>
     </view>
     <view class="cu-form-group flex justify-between align-center">
       <view class="flex justify-between align-center basis-sm">
         <text class="title">钯金</text>
-        <text class="content text-gray">33万</text>
+        <text class="content text-gray">{{stockPd}}克</text>
       </view>
       <view class="flex justify-between align-center basis-sm">
         <text class="title">白银</text>
-        <text class="text-gray">23万</text>
+        <text class="text-gray">{{stockAg}}克</text>
       </view>
     </view>
     <view class="cu-form-group">
       <view class="title">定价类型</view>
       <view class="text-right">
-        <radio-group class="block">
-          <radio class="yellow"></radio>回购
-          <radio class="yellow margin-left-sm"></radio>销售
+        <radio-group class="block" bindchange="bindchange">
+          <radio class="yellow" value="dr"></radio>回购
+          <radio class="yellow margin-left-sm" value="dc"></radio>销售
         </radio-group>
       </view>
     </view>
@@ -61,23 +61,23 @@
     </view>
     <view class="cu-form-group">
       <view class="title">黄金</view>
-      <input class="text-right" placeholder="请输入黄金数量" type="number"></input>
+      <input class="text-right" placeholder="请输入黄金重量" type="digit" bindinput="bindinput" data-key="auPriceWeight"></input>
     </view>
     <view class="cu-form-group">
       <view class="title">铂金</view>
-      <input class="text-right" placeholder="请输入铂金数量" type="number"></input>
+      <input class="text-right" placeholder="请输入铂金重量" type="digit" bindinput="bindinput" data-key="ptPriceWeight"></input>
     </view>
     <view class="cu-form-group">
       <view class="title">钯金</view>
-      <input class="text-right" placeholder="请输入钯金数量" type="number"></input>
+      <input class="text-right" placeholder="请输入钯金重量" type="digit" bindinput="bindinput" data-key="pdPriceWeight"></input>
     </view>
     <view class="cu-form-group">
       <view class="title">白银</view>
-      <input class="text-right" placeholder="请输入白银数量" type="number"></input>
+      <input class="text-right" placeholder="请输入白银重量" type="digit" bindinput="bindinput" data-key="agPriceWeight"></input>
     </view>
 
     <view class="margin-tb-lg text-center margin-bottom-xl">
-      <button class="cu-btn round bg-yellow" style="width: 80%">确定定价</button>
+      <button class="cu-btn round bg-yellow" style="width: 80%" bindtap="confirmPrice">确定定价</button>
     </view>
   </view>
   

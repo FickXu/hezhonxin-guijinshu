@@ -11,16 +11,16 @@
     <view class="item border">
       <view class="icon"><image src="../images/icon-account.png" />
         </view>
-      <input class="ipt" type="text" placeholder="请输入账号" value="{{params.userAccount}}" />
+      <input class="ipt" type="text" placeholder="请输入账号" value="{{params.userAccount}}" bindinput="bindinput" data-key="userAccount" />
     </view>
     <view class="item border">
       <view class="icon"><image src="../images/icon-pw.png" />
         </view>
-      <input class="ipt" type="password" placeholder="请输入密码" value="{{params.password}}" />
+      <input class="ipt" type="password" placeholder="请输入密码" value="{{params.password}}" bindinput="bindinput" data-key="password" />
     </view>
     <view class="item" style="margin-top: 20px">
-      <button class="btn" bindtap="userLogin">登录</button>
-      <!-- <button open-type="getUserInfo" class="btn" bindgetuserinfo="bindgetuserinfo">登录</button> -->
+      <!-- <button class="btn" bindtap="userLogin">登录</button> -->
+      <button open-type="getUserInfo" class="btn" bindgetuserinfo="bindgetuserinfo">登录</button>
     </view>
   </view>
   

@@ -15,6 +15,7 @@
         <view class="cu-item arrow" bindtap="callPhone" data-text="{{telNo}}">
             <view class="content">
                 <text class="custome-icon-size cuIcon-servicefill text-yellow"></text>联系客服
+                <button open-type="contact" class="btn-service"></button>
             </view>
         </view>
         <!-- telphone -->

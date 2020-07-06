@@ -38,7 +38,7 @@ App({
     defalultImageUrlTz: 'https://dssjewel.com/file/basic/tzdefault.png',
     // 默认图片-gia
     defalultImageUrlGia: 'https://dssjewel.com/file/basic/giadefault.png',
-    openId: wx.getStorageSync('openId') || '234235',
+    openId: wx.getStorageSync('openId') || '',
     isIpx: false,   //适配IPhoneX
     loginCode: 0,
     filialeKey: 'SZHZX'

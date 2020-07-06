@@ -8,13 +8,13 @@ Component({
 	data: {
 		title: '我的',
 		userInfo: {
-			avatarUrl: "https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTINhLTx15w3Bm9iamcriaia0ELLTnyXtUJD9wHibQSOabeVSAqMmaDp8L1zTV1R2DlW9YnI5kOJ1fTlLg/132",
-			city: "Shenzhen",
-			country: "China",
-			gender: 1,
-			language: "zh_CN",
-			nickName: "Fick",
-			province: "Guangdong"
+			// avatarUrl: "https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTINhLTx15w3Bm9iamcriaia0ELLTnyXtUJD9wHibQSOabeVSAqMmaDp8L1zTV1R2DlW9YnI5kOJ1fTlLg/132",
+			// city: "Shenzhen",
+			// country: "China",
+			// gender: 1,
+			// language: "zh_CN",
+			// nickName: "Fick",
+			// province: "Guangdong"
 		}
 	},
 	ready: function () {

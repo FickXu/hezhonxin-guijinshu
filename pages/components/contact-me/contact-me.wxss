@@ -34,3 +34,12 @@
   color: #3d3d3d;
   font-size: 32rpx;
 }
+.container .btn-service {
+  min-height: 50px;
+  width: 130px;
+  float: right;
+  background-color: transparent;
+}
+.container .btn-service::after {
+  border: none;
+}

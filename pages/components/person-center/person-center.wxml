@@ -9,7 +9,7 @@
       <image src="{{userInfo.avatarUrl}}"  class="user-photo" />
       <view class="user-info-name">
         <text>{{userInfo.name}}</text>
-        <text class="small">{{userInfo.province}}</text>
+        <!-- <text class="small">{{userInfo.province}}</text> -->
       </view>
     </view>
   </view>

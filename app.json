@@ -1,9 +1,9 @@
 {
   "pages": [
-    "pages/price-list/price-list",
     "pages/home/home",
-    "pages/wechat-pricing/wechat-pricing",
     "pages/login/login",
+    "pages/price-list/price-list",
+    "pages/wechat-pricing/wechat-pricing",
     "pages/account-list/account-list",
     "pages/pressing-list/pressing-list",
     "pages/warehouseing-list/warehouseing-list",

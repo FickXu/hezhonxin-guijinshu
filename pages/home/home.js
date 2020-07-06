@@ -20,7 +20,7 @@ Page({
     status7: '',
     status8: '',
     // 是否已经登录
-    isLogin: Object.keys(wx.getStorageSync('userInfo')).length > 0 ? true : false
+    isLogin: false
   },
 
   // 通知登录状态
@@ -107,6 +107,11 @@ Page({
 
   // 页面显示时
   onShow: function () {
+
+    this.setData({
+      isLogin: wx.getStorageSync('openId') ? true : false
+    })
+
     // 首次加载
     this.queryPrice()
 

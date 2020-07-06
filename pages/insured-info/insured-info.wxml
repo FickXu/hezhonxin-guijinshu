@@ -32,15 +32,15 @@
     <!-- 保费 -->
     <view class="cu-form-group margin-top">
       <view class="title">保额</view>
-      <input class="text-right" type="text" placeholder="请输入正整数的保额" value="{{params.coverage}}" bindinput="bindInput" data-key="coverage" />
+      <input class="text-right" type="number" placeholder="请输入正整数的保额" value="{{params.coverage}}" bindinput="bindInput" data-key="coverage" />
     </view>
     <view class="cu-form-group">
       <view class="title">保额大写</view>
-      <input class="text-right" disabled="{{true}}" type="text" placeholder="保额大写" />
+      <input class="text-right" disabled="{{true}}" type="text" placeholder="保额大写" value="{{uppercaseCharacters}}" />
     </view>
     <view class="cu-form-group ">
       <view class="title">保费</view>
-      <input class="text-right" type="text" placeholder="请输入正整数保费" value="{{params.premium}}" bindinput="bindInput" data-key="premium" />
+      <input class="text-right" type="text" placeholder="填写保额后自动计算" value="{{params.premium}}" disabled="{{true}}" />
     </view>
 
     <!-- 要求 -->

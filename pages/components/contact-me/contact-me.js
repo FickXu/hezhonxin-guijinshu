@@ -11,7 +11,7 @@ Component({
         iconUrl: '../../images/logo1.png',
         title: '联系我们',
       },
-      logoImg: "",
+      logoImg: "https://www.hzx9999.com/file/base/logo/SZHZX.jpg",
       qqNumber: "",
       companyProfile: "",
       mobileNumber: "",
@@ -25,10 +25,10 @@ Component({
         let data = res.data.data
         this.setData({
           logoImg: data.logoImg,
-          qqNo: data.qqNumber,
-          synopsis: data.companyProfile,
-          telNo: data.mobileNumber,
-          wechatNo: data.wechatNumber
+          qqNumber: data.qqNumber,
+          companyProfile: data.companyProfile,
+          mobileNumber: data.mobileNumber,
+          wechatNumber: data.wechatNumber
         })
         // appId: "wx838aed569cf27546"
         // appSecret: "5470343563c3212a2f7d7b7c040c8bf7"
