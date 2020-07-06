@@ -58,7 +58,7 @@ Page({
   },
   
   onLoad() {
-    // this.queryList()
+    this.queryList()
   },
 
   DateChange(e) {
@@ -91,7 +91,7 @@ Page({
         rtStatus: false
       })
     }, 2000);
-    // this.queryList()
+    this.queryList()
   },
   
   // 滚动到底部时触发
@@ -100,13 +100,14 @@ Page({
       'params.currentPage': ++this.data.params.currentPage,
     })
 
-    console.log(this.data.params.currentPage)
+    this.queryList()
+    // console.log(this.data.params.currentPage)
 
-    let arr = this.data.list
-    arr.push(this.data.list[0])
-    this.setData({
-      list: arr
-    })
+    // let arr = this.data.list
+    // arr.push(this.data.list[0])
+    // this.setData({
+    //   list: arr
+    // })
   },
   
   // 查询列表
@@ -115,9 +116,16 @@ Page({
       ...this.data.params
     }
     request('customer/pricelistlist', params).then(res => {
-      if (res.data.code == 0) {
+      if (res.data.code == 0 && res.data.data.length > 0) {
+        let arr = []
+        if (this.data.params.currentPage == 1) {
+          arr = res.data.data
+        } else {
+          arr = this.data.list
+          arr.push(res.data.data)
+        }
         this.setData({
-          list: res.data.data
+          list: arr
         })
       }
     })
