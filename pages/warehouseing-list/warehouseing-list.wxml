@@ -3,8 +3,17 @@
 	<view slot="content">{{ title }}</view>
 </cu-custom>
 
-<!-- 投保列表 -->
-<scroll-view scroll-y="true">
+<!-- 入库列表 -->
+<scroll-view
+  class="scroll-page"
+  scroll-y="true"
+  lower-threshold="50"
+  enable-back-to-top="{{true}}"
+  refresher-enabled="{{true}}"
+  refresher-triggered="{{rtStatus}}"
+  bindrefresherpulling="bindrefresherpulling" 
+  bindscrolltolower="bindscrolltolower"
+  >
   <!-- 搜索 -->
   <view class="search-box">
     
@@ -15,10 +24,10 @@
     </view>
 
     <!-- 备注说明 -->
-    <!-- <view class="cu-form-group">
+    <view class="cu-form-group">
       <view class="title">备注说明</view>
-      <input class="text-right" placeholder="请输入备注说明"></input>
-    </view> -->
+      <input value="{{params.coverDesc}}" data-key="coverDesc"  bindinput="bindInput" class="text-right" placeholder="请输入备注说明"></input>
+    </view>
 
     <view class="margin-tb-lg text-center" wx:key>
       <button class="cu-btn round bg-yellow" style="width: 80%" bindtap="queryList">查询</button>

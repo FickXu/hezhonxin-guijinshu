@@ -4273,3 +4273,6 @@ scroll-view.cu-steps .cu-item {
 .picker {
   min-height: 100rpx;
 }
+.scroll-page {
+  height: 100vh;
+}

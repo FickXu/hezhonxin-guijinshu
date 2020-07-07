@@ -1,4 +1,5 @@
 import request from '../api/request'
+import {formatTime} from '../../utils/util'
 
 const app = getApp();
 // pages/home/home.js
@@ -18,14 +19,8 @@ Page({
       pagesize: 10,
       // 快递单号
       courierNumber: '',
-      // 客户主键
-      customerId: '',
-      // 客户名称
-      customerName: '',
-      // 录入步骤 0投保单 1毛重 2板重 3成色 4确认入库 5已经入库
-      enterStep: '',
-      // 是否到货 0 已到 1 未到
-      isGet: '',
+      // 备注
+      coverDesc: '',
     },
     list: [
       // {
@@ -47,6 +42,35 @@ Page({
     this.queryList()
   },
 
+  // 离开顶部时触发
+  bindrefresherpulling() {
+    this.setData({
+      'params.currentPage': 1,
+      'params.pagesize': 10,
+      'params.coverDesc': '',
+      'params.courierNumber': '',
+    })
+
+    setTimeout(() => {
+      this.setData({
+        rtStatus: false
+      })
+    }, 2000);
+    this.queryList()
+  },
+  
+  // 滚动到底部时触发
+  bindscrolltolower() {
+    this.setData({
+      'params.currentPage': ++this.data.params.currentPage,
+    })
+
+    console.log(this.data.params.currentPage)
+
+    this.queryList()
+  },
+
+
   // 检测详情
   openDetailPage(e) {
     let params = {
@@ -67,10 +91,25 @@ Page({
       ...this.data.params
     }
     request('customer/instoragelist', params).then(res => {
-      if (res.data.code == 0) {
+      if (res.data.code == 0 && res.data.data.length > 0) {
+        let arr = []
+        if (this.data.params.currentPage == 1) {
+          arr = res.data.data
+          arr.forEach(item => {
+            item.enterTimePut = formatTime(new Date(item.enterTimePut))
+          })
+        } else {
+          arr = this.data.list
+          let _arr = res.data.data
+          _arr.forEach(item => {
+            item.enterTimePut = formatTime(new Date(item.enterTimePut))
+          })
+          arr.push(_arr)
+        }
         this.setData({
-          list: res.data.data
+          list: arr
         })
+        console.log('==================', this.data.list)
       }
     })
   },

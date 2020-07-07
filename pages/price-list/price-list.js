@@ -1,4 +1,5 @@
 import request from '../api/request'
+import {formatTime} from '../../utils/util'
 
 const app = getApp();
 // pages/home/home.js
@@ -31,27 +32,27 @@ Page({
     },
     list: [
       {
-        priceListNo: 20495304,
-        customerId: 1,
-        customerName: 'niubi',
-        filialeKey: 'niubi',
-        priceListStatueName: '已结束',
-        drauPrice: '67万',
-        drauPriceWeight: '1000g',
-        drptPrice: '67万',
-        drptPriceWeight: '1000g',
-        drpdPrice: '67万',
-        drpdPriceWeight: '1000g',
-        dragPrice: '67万',
-        dragPriceWeight: '1000g',
-        dcauPrice: '67万',
-        dcauPriceWeight: '1000g',
-        dcptPrice: '67万',
-        dcptPriceWeight: '1000g',
-        dcpdPrice: '67万',
-        dcpdPriceWeight: '1000g',
-        dcagPrice: '67万',
-        dcagPriceWeight: '1000g',
+        // priceListNo: 20495304,
+        // customerId: 1,
+        // customerName: 'niubi',
+        // filialeKey: 'niubi',
+        // priceListStatueName: '已结束',
+        // drauPrice: '67万',
+        // drauPriceWeight: '1000g',
+        // drptPrice: '67万',
+        // drptPriceWeight: '1000g',
+        // drpdPrice: '67万',
+        // drpdPriceWeight: '1000g',
+        // dragPrice: '67万',
+        // dragPriceWeight: '1000g',
+        // dcauPrice: '67万',
+        // dcauPriceWeight: '1000g',
+        // dcptPrice: '67万',
+        // dcptPriceWeight: '1000g',
+        // dcpdPrice: '67万',
+        // dcpdPriceWeight: '1000g',
+        // dcagPrice: '67万',
+        // dcagPriceWeight: '1000g',
       }
     ],
     rtStatus: false
@@ -101,13 +102,6 @@ Page({
     })
 
     this.queryList()
-    // console.log(this.data.params.currentPage)
-
-    // let arr = this.data.list
-    // arr.push(this.data.list[0])
-    // this.setData({
-    //   list: arr
-    // })
   },
   
   // 查询列表
@@ -120,9 +114,16 @@ Page({
         let arr = []
         if (this.data.params.currentPage == 1) {
           arr = res.data.data
+          arr.forEach(item => {
+            item.createDate = formatTime(new Date(item.createDate))
+          })
         } else {
           arr = this.data.list
-          arr.push(res.data.data)
+          let _arr = res.data.data
+          _arr.forEach(item => {
+            item.createDate = formatTime(new Date(item.createDate))
+          })
+          arr.push(_arr)
         }
         this.setData({
           list: arr
