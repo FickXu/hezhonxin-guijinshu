@@ -1,4 +1,5 @@
 import request from '../api/request'
+import {formatTime} from '../../utils/util'
 
 const app = getApp();
 // pages/home/home.js
@@ -27,7 +28,7 @@ Page({
       // 开始时间
       startTime: '2020-6-26',
       // 结束时间
-      endTime: '2020-6-26',
+      endTime: '',
     },
     list: [
       // {
@@ -58,6 +59,7 @@ Page({
     ]
   },
   onLoad() {
+    this.getLastWeekDate()
     this.queryList()
   },
   
@@ -73,15 +75,40 @@ Page({
     })
   },
 
+  // 获取前一周日期
+  getLastWeekDate() {
+    let nowdate = new Date()
+    let oneweekdate = new Date(nowdate-7*24*3600*1000)
+    let y = oneweekdate.getFullYear()
+    let m = oneweekdate.getMonth()+1
+    let d = oneweekdate.getDate();
+    this.setData({
+      'params.startTime': y+'-'+m+'-'+d
+    })
+  },
+
   // 查询列表
   queryList() {
     let params = {
       ...this.data.params
     }
     request('customer/billlist', params).then(res => {
-      if (res.data.code == 0) {
+      if (res.data.code == 0 && res.data.data.length > 0) {
+        let arr = []
+        if (this.data.params.currentPage == 1) {
+          arr = res.data.data
+          arr.forEach(item => {
+            item.createDate = formatTime(new Date(item.createDate))
+          })
+        } else {
+          let _arr = res.data.data
+          _arr.forEach(item => {
+            item.createDate = formatTime(new Date(item.createDate))
+          })
+          arr = [].concat(this.data.list, _arr)
+        }
         this.setData({
-          list: res.data.data
+          list: arr
         })
       }
     })
@@ -101,11 +128,11 @@ Page({
     })
   },
 
-  // 选择压料状态
-  bindchange(e) {
-    console.log(e.detail.value)
-    this.setData({
-      'params.priceListType': e.detail.value
-    })
-  }
+  // // 选择压料状态
+  // bindchange(e) {
+  //   console.log(e.detail.value)
+  //   this.setData({
+  //     'params.priceListType': e.detail.value
+  //   })
+  // }
 })

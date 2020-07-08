@@ -3,8 +3,17 @@
 	<view slot="content">{{ title }}</view>
 </cu-custom>
 
-<!-- 投保列表 -->
-<scroll-view scroll-y="true">
+<!-- 压料列表 -->
+<scroll-view
+  class="scroll-page"
+  scroll-y="true"
+  lower-threshold="50"
+  enable-back-to-top="{{true}}"
+  refresher-enabled="{{true}}"
+  refresher-triggered="{{rtStatus}}"
+  bindrefresherpulling="bindrefresherpulling" 
+  bindscrolltolower="bindscrolltolower"
+  >
   <!-- 搜索 -->
   <view class="search-box">
     
@@ -19,8 +28,9 @@
       <view class="title">压料状态</view>
       <view class="text-right">
         <radio-group class="block" bindchange="bindchange">
-          <radio class="yellow" value="0"></radio>全部
-          <radio class="yellow margin-left-sm" value="1"></radio>销售
+          <radio class="yellow" value=""></radio>全部
+          <radio class="yellow" value="0"></radio>压料中
+          <radio class="yellow margin-left-sm" value="1"></radio>已归库
         </radio-group>
       </view>
     </view>
@@ -32,7 +42,7 @@
 
   <!-- 结果 -->
   <view class="search-result margin-top-xl" wx:if="{{list.length>0}}">
-    <view wx:for="{{list}}">
+    <view wx:for="{{list}}" class="margin-top-xs">
       <view class="cu-form-group">
         <view class="title">压料单号</view>
         <text class="text-gray">{{item.pressureOrderNo}}</text>

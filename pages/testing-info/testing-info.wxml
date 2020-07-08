@@ -15,8 +15,8 @@
       快递单成色信息
     </view>
   </view>
-  <view class="padding-lr" wx:if="{{detail.meterialInfoList.length>0}}">
-    <view class="bg-white" wx:for="{{detail.meterialInfoList}}">
+  <view wx:if="{{detail.meterialInfoList.length>0}}">
+    <view class="bg-white padding-lr" wx:for="{{detail.meterialInfoList}}">
       <!-- 料明细 -->
       <view class="tag-box">
         <view class="zjs-tag bg-light-yellow">{{item.materialTypeName}}</view>
@@ -39,22 +39,22 @@
     <view class='action text-df'>
       <text class='cuIcon-titles text-orange '></text> 入库汇总板重
     </view>
-    <view class="flex justify-between margin-top">
-      <view class="tag-box">
+    <view class="flex justify-between margin-top-sm margin-top-xs">
+      <view class="tag-box justify-center">
         <view class="label">黄金</view>
-        <view class="zjs-tag bg-gray margin-left-sm">{{item.auTotalHeavyPlate}}</view>
+        <view class="zjs-tag bg-gray margin-left-sm margin-top-xs">{{detail.auTotalHeavyPlate}}g</view>
       </view>
-      <view class="tag-box">
+      <view class="tag-box justify-center">
         <view class="label">钯金</view>
-        <view class="zjs-tag bg-gray margin-left-sm">{{item.ptTotalHeavyPlate}}</view>
+        <view class="zjs-tag bg-gray margin-left-sm margin-top-xs">{{detail.ptTotalHeavyPlate}}g</view>
       </view>
-      <view class="tag-box">
+      <view class="tag-box justify-center">
         <view class="label">铂金</view>
-        <view class="zjs-tag bg-gray margin-left-sm">{{item.pdTotalHeavyPlate}}</view>
+        <view class="zjs-tag bg-gray margin-left-sm margin-top-xs">{{detail.pdTotalHeavyPlate}}g</view>
       </view>
-      <view class="tag-box">
+      <view class="tag-box justify-center">
         <view class="label">白银</view>
-        <view class="zjs-tag bg-gray margin-left-sm">{{item.agTotalHeavyPlate}}</view>
+        <view class="zjs-tag bg-gray margin-left-sm margin-top-xs">{{detail.agTotalHeavyPlate}}g</view>
       </view>
     </view>
     
@@ -65,30 +65,30 @@
     <view class='action text-df'>
       <text class='cuIcon-titles text-orange '></text> 入库汇总净重
     </view>
-    <view class="flex justify-between margin-top">
-      <view class="tag-box">
+    <view class="flex justify-between margin-top-sm">
+      <view class="tag-box justify-center">
         <view class="label">黄金</view>
-        <view class="zjs-tag bg-gray margin-left-sm">{{item.auTotalNetWeight}}</view>
+        <view class="zjs-tag bg-gray margin-left-sm margin-top-xs">{{detail.auTotalNetWeight}}g</view>
       </view>
-      <view class="tag-box">
+      <view class="tag-box justify-center">
         <view class="label">钯金</view>
-        <view class="zjs-tag bg-gray margin-left-sm">{{item.ptTotalNetWeight}}</view>
+        <view class="zjs-tag bg-gray margin-left-sm margin-top-xs">{{itdetailem.ptTotalNetWeight}}g</view>
       </view>
-      <view class="tag-box">
+      <view class="tag-box justify-center">
         <view class="label">铂金</view>
-        <view class="zjs-tag bg-gray margin-left-sm">{{item.pdTotalNetWeight}}</view>
+        <view class="zjs-tag bg-gray margin-left-sm" margin-top-xs>{{detail.pdTotalNetWeight}}g</view>
       </view>
-      <view class="tag-box">
+      <view class="tag-box justify-center">
         <view class="label">白银</view>
-        <view class="zjs-tag bg-gray margin-left-sm">{{item.agTotalNetWeight}}</view>
+        <view class="zjs-tag bg-gray margin-left-sm margin-top-xs">{{detail.agTotalNetWeight}}g</view>
       </view>
     </view>
     
   </view>
 
   <view class="cu-form-group align-start margin-top">
-    <view class="title">检测备注</view>
-    <textarea maxlength="-1" disabled="{{true}}" bindinput="textareaAInput" placeholder="一切正常"></textarea>
+    <view class="title" style="min-width: 100rpx">检测备注</view>
+    <view class="text-gray text-right">{{item.inStorageDesc}}</view>
   </view>
     
 </scroll-view>

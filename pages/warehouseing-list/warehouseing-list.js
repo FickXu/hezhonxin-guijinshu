@@ -99,17 +99,15 @@ Page({
             item.enterTimePut = formatTime(new Date(item.enterTimePut))
           })
         } else {
-          arr = this.data.list
           let _arr = res.data.data
           _arr.forEach(item => {
-            item.enterTimePut = formatTime(new Date(item.enterTimePut))
+            item.createDate = formatTime(new Date(item.createDate))
           })
-          arr.push(_arr)
+          arr = [].concat(this.data.list, _arr)
         }
         this.setData({
           list: arr
         })
-        console.log('==================', this.data.list)
       }
     })
   },

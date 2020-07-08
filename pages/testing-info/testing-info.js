@@ -14,17 +14,16 @@ Page({
     detail: {}
   },
   onLoad() {
+    let self = this
     const eventChannel = this.getOpenerEventChannel()
     eventChannel.on('sendData', function(data) {
       let params = {
         ...data.data
       }
       request('customer/instorageinfo', params).then(res => {
-        if (res.data.code == 0) {
-          this.setData({
-            detail: res.data.data
-          })
-        }
+        self.setData({
+          detail: res.data.data
+        })
       })
     })
   },

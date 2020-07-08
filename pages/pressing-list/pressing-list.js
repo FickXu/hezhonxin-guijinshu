@@ -1,4 +1,5 @@
 import request from '../api/request'
+import {formatTime} from '../../utils/util'
 
 const app = getApp();
 // pages/home/home.js
@@ -25,9 +26,9 @@ Page({
       // 定价类别
       priceListType: '',
       // 开始时间
-      startTime: '2020-6-26',
+      startTime: '',
       // 结束时间
-      endTime: '2020-6-26',
+      endTime: '',
     },
     list: [
       // {
@@ -51,15 +52,58 @@ Page({
     this.queryList()
   },
 
+   // 离开顶部时触发
+   bindrefresherpulling() {
+    this.setData({
+      'params.currentPage': 1,
+      'params.pagesize': 10,
+      'params.pressureOrderNo': '',
+      'params.customerId': '',
+      'params.customerName': '',
+      'params.priceListType': '',
+      'params.startTime': '',
+      'params.endTime': '',
+    })
+
+    setTimeout(() => {
+      this.setData({
+        rtStatus: false
+      })
+    }, 2000);
+    this.queryList()
+  },
+  
+  // 滚动到底部时触发
+  bindscrolltolower() {
+    this.setData({
+      'params.currentPage': ++this.data.params.currentPage,
+    })
+
+    this.queryList()
+  },
+
   // 查询列表
   queryList() {
     let params = {
       ...this.data.params
     }
     request('customer/pressureorderlist', params).then(res => {
-      if (res.data.code == 0) {
+      if (res.data.code == 0 && res.data.data.length > 0) {
+        let arr = []
+        if (this.data.params.currentPage == 1) {
+          arr = res.data.data
+          arr.forEach(item => {
+            item.createDate = formatTime(new Date(item.createDate))
+          })
+        } else {
+          let _arr = res.data.data
+          _arr.forEach(item => {
+            item.createDate = formatTime(new Date(item.createDate))
+          })
+          arr = [].concat(this.data.list, _arr)
+        }
         this.setData({
-          list: res.data.data
+          list: arr
         })
       }
     })

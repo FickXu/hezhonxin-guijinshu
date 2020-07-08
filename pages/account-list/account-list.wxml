@@ -16,7 +16,7 @@
     </view>
 
 
-    <view class="cu-form-group">
+    <!-- <view class="cu-form-group">
       <view class="title">类型</view>
       <view class="text-right">
         <radio-group class="block" bindchange="bindchange">
@@ -24,7 +24,7 @@
           <radio class="yellow margin-left-sm" value="1"></radio>销售
         </radio-group>
       </view>
-    </view>
+    </view> -->
 
     <!-- 开始时间 -->
     <view class="cu-form-group">
@@ -52,16 +52,16 @@
   </view>
 
     <view class="margin-top" wx:if="{{list.length>0}}">
-      <view wx:for="{{list}}">
+      <view class="margin-bottom" wx:for="{{list}}">
 
         <!-- 表单 -->
         <view class="cu-form-group">
           <text class="title">时间</text>
-          <text class="text-gray">{{item.aaaaa}}</text>
+          <text class="text-gray">{{item.createDate}}</text>
         </view>
         <view class="cu-form-group">
-          <text class="title">银行</text>
-          <text class="text-gray">{{item.aaaaa}}</text>
+          <text class="title">交易类型</text>
+          <text class="text-gray">{{item.dealTypeName}}</text>
         </view>
         <view class="cu-form-group">
           <text class="title">客户名</text>
@@ -69,18 +69,18 @@
         </view>
     
         <!-- 进出账信息 -->
-        <view class="cu-bar bg-white margin-top">
+        <view class="cu-bar bg-white margin-top-xs">
           <view class='action text-df'>
             <text class='cuIcon-titles text-orange '></text> 进出账
           </view>
         </view>
         <view class="cu-form-group">
           <view class="title">现金</view>
-          <text class="text-gray">{{item.cashInAndOut}}</text>
+          <text class="text-gray">{{item.cashInAndOut}}元</text>
         </view>
         <view class="cu-form-group">
           <view class="title">银行卡</view>
-          <text class="text-gray">{{item.bankCardInAndOut}}</text>
+          <text class="text-gray">{{item.bankCardInAndOut}}元</text>
         </view>
         <!-- <view class="cu-form-group">
           <view class="title">钯金</view>
@@ -88,11 +88,11 @@
         </view> -->
         <view class="cu-form-group">
           <view class="title">结算</view>
-          <text class="text-gray">{{item.systemJsinAndOut}}</text>
+          <text class="text-gray">{{item.systemJsinAndOut}}元</text>
         </view>
     
         <!-- 进出料信息 -->
-        <view class="cu-bar bg-white margin-top">
+        <view class="cu-bar bg-white margin-top-xs">
           <view class='action text-df'>
             <text class='cuIcon-titles text-orange '></text> 进出料
           </view>
@@ -100,26 +100,26 @@
         <view class="cu-form-group flex justify-between align-center">
           <view class="flex justify-between align-center basis-sm">
             <text class="title">黄金</text>
-            <text class="content text-gray">{{item.auInAndOutMaterial}}</text>
+            <text class="content text-gray">{{item.auInAndOutMaterial}}g</text>
           </view>
           <view class="flex justify-between align-center basis-sm">
             <text class="title">铂金</text>
-            <text class="text-gray">{{item.ptInAndOutMaterial}}</text>
+            <text class="text-gray">{{item.ptInAndOutMaterial}}g</text>
           </view>
         </view>
         <view class="cu-form-group flex justify-between align-center">
           <view class="flex justify-between align-center basis-sm">
             <text class="title">钯金</text>
-            <text class="content text-gray">{{item.pdInAndOutMaterial}}</text>
+            <text class="content text-gray">{{item.pdInAndOutMaterial}}g</text>
           </view>
           <view class="flex justify-between align-center basis-sm">
             <text class="title">白银</text>
-            <text class="text-gray">{{item.agInAndOutMaterial}}</text>
+            <text class="text-gray">{{item.agInAndOutMaterial}}g</text>
           </view>
         </view>
     
         <!-- 定价 -->
-        <view class="cu-bar bg-white margin-top">
+        <view class="cu-bar bg-white margin-top-xs">
           <view class='action text-df'>
             <text class='cuIcon-titles text-orange '></text> 定价
           </view>
@@ -127,53 +127,53 @@
         <view class="cu-list grid col-4 no-border flex justify-around">
           <view class="item">
             <view class="text-center bg-orange header">黄金</view>
-            <view class="text-center">单价 <text class="text-red">{{item.auPricePrice}}</text></view>
-            <view class="text-center">数量 <text class="text-red">{{item.auPriceNumber}}</text></view>
+            <view class="text-center">单价 <text class="text-red">{{item.auPricePrice}}元</text></view>
+            <view class="text-center">数量 <text class="text-red">{{item.auPriceNumber}}g</text></view>
           </view>
           <view class="item">
             <view class="text-center bg-orange header">铂金</view>
-            <view class="text-center">单价 <text class="text-red">{{item.ptPricePrice}}</text></view>
-            <view class="text-center">数量 <text class="text-red">{{item.ptPriceNumber}}</text></view>
+            <view class="text-center">单价 <text class="text-red">{{item.ptPricePrice}}元</text></view>
+            <view class="text-center">数量 <text class="text-red">{{item.ptPriceNumber}}g</text></view>
           </view>
           <view class="item">
             <view class="text-center bg-orange header">钯金</view>
-            <view class="text-center">单价 <text class="text-red">{{item.pdPricePrice}}</text></view>
-            <view class="text-center">数量 <text class="text-red">{{item.pdPriceNumber}}</text></view>
+            <view class="text-center">单价 <text class="text-red">{{item.pdPricePrice}}元</text></view>
+            <view class="text-center">数量 <text class="text-red">{{item.pdPriceNumber}}g</text></view>
           </view>
           <view class="item">
             <view class="text-center bg-orange header">白银</view>
-            <view class="text-center">单价 <text class="text-red">{{item.agPricePrice}}</text></view>
-            <view class="text-center">数量 <text class="text-red">{{item.agPriceNumber}}</text></view>
+            <view class="text-center">单价 <text class="text-red">{{item.agPricePrice}}元</text></view>
+            <view class="text-center">数量 <text class="text-red">{{item.agPriceNumber}}g</text></view>
           </view>
         </view>
         
         <!-- 应收付账单结余款 -->
-        <view class="cu-bar bg-white margin-top">
+        <view class="cu-bar bg-white margin-top-xs">
           <view class='action text-df'>
             <text class='cuIcon-titles text-orange '></text> 应收付账单结余款
           </view>
         </view>
         <view class="cu-form-group">
           <view class="title">黄金</view>
-          <text class="text-gray">{{item.dealWithAu}}</text>
+          <text class="text-gray">{{item.dealWithAu}}元</text>
         </view>
         <view class="cu-form-group">
           <view class="title">铂金</view>
-          <text class="text-gray">{{item.dealWithPt}}</text>
+          <text class="text-gray">{{item.dealWithPt}}元</text>
         </view>
         <view class="cu-form-group">
           <view class="title">钯金</view>
-          <text class="text-gray">{{item.dealWithPd}}</text>
+          <text class="text-gray">{{item.dealWithPd}}元</text>
         </view>
         <view class="cu-form-group">
           <view class="title">白银</view>
-          <text class="text-gray">{{item.dealWithAg}}</text>
+          <text class="text-gray">{{item.dealWithAg}}元</text>
         </view>
     
         <!-- 检测备注 -->
-        <view class="cu-form-group align-start margin-top">
-          <view class="title">检测备注</view>
-          <textarea class="text-right" maxlength="-1" disabled="{{true}}" placeholder="请输入检测备注" value="{{item.remark}}"></textarea>
+        <view class="cu-form-group align-center margin-top-xs">
+          <view class="title" style="min-width: 100rpx">备注</view>
+          <view class="text-gray text-right">{{item.remark}}</view>
         </view>
       </view>
     </view>
