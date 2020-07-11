@@ -20,7 +20,7 @@ Page({
     status7: '',
     status8: '',
     // 是否已经登录
-    isLogin: false
+    // isLogin: false
   },
 
   // 通知登录状态
@@ -37,37 +37,37 @@ Page({
     let self = this
     let data = event.currentTarget.dataset.page;
 
-    self.setData({
-      PageCur: data
-    })
+    // self.setData({
+    //   PageCur: data
+    // })
     
-    // if (!this.data.isLogin && data == 'person-center') {
-    //   wx.showModal({
-    //     title: '提示',
-    //     content: '用户未登录，请重新登录',
-    //     success (res) {
-    //       if (res.confirm) {
-    //         wx.clearStorage({
-    //           success () {
-    //             app.globalData.loginCode = 10007
-    //             self.setData({
-    //               isLogin: false,
-    //               showSearch: 'none',
-    //               loginCode: app.globalData.loginCode
-    //             })
-    //           }
-    //         })
-    //       }
-    //     }
-    //   })
-    //   return
-    // } else {
-    //   self.setData({
-    //     PageCur: data,
-    //     loginCode: 0,
-    //     showSearch: 'block'
-    //   })
-    // }
+    if (!wx.getStorageSync('openId') && data == 'person-center') {
+      wx.showModal({
+        title: '提示',
+        content: '用户未登录，请重新登录',
+        success (res) {
+          if (res.confirm) {
+            wx.clearStorage({
+              success () {
+                // app.globalData.loginCode = 10007
+                // self.setData({
+                //   isLogin: false,
+                //   loginCode: app.globalData.loginCode
+                // })
+                wx.navigateTo({
+                  url: '../login/login'
+                })
+              }
+            })
+          }
+        }
+      })
+      return
+    } else {
+      self.setData({
+        PageCur: data,
+      })
+    }
   },
 
   // 查询价格
@@ -108,16 +108,16 @@ Page({
   // 页面显示时
   onShow: function () {
 
-    this.setData({
-      isLogin: wx.getStorageSync('openId') ? true : false
-    })
+    // this.setData({
+    //   isLogin: wx.getStorageSync('openId') ? true : false
+    // })
 
     // 首次加载
     this.queryPrice()
 
-    // setInterval(() => {
-    //   this.queryPrice()
-    // }, 2000)
+    setInterval(() => {
+      this.queryPrice()
+    }, 1000)
     
   },
 })

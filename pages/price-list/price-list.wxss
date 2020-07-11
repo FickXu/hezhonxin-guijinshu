@@ -5,3 +5,8 @@
   width: 23%!important;
   line-height: 28px;
 }
+.price-item {
+  margin: 20rpx 20rpx 30rpx;
+  border-radius: 20rpx;
+  overflow: hidden;
+}

@@ -18,12 +18,21 @@ Component({
 		}
 	},
 	ready: function () {
-		let userInfo = {
-			...this.data.userInfo,
-			...app.globalData.userInfo
+
+		// 是否有openid
+		if (!wx.getStorageSync('openId')) {
+			wx.navigateTo({
+				url: '../../login/login'
+			})
+			return
 		}
+
+		// let userInfo = {
+		// 	...this.data.userInfo,
+		// 	...app.globalData.userInfo
+		// }
 		this.setData({
-			userInfo: userInfo
+			userInfo: wx.getStorageSync('userInfo')
 		})
 	},
 	methods: {

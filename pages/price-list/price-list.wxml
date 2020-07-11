@@ -60,11 +60,11 @@
     </view>
   </view>
   
-  <view class="margin-bottom" wx:for="{{list}}">
+  <view class="margin-bottom price-item" wx:for="{{list}}">
     <!-- 表单 -->
-    <view class="cu-form-group">
+    <view class="cu-form-group bg-yellow">
       <text class="title">定价单号</text>
-      <text class="text-gray">{{item.priceListNo}}</text>
+      <text class="text-white">{{item.priceListNo}}</text>
     </view>
     <view class="cu-form-group">
       <text class="title">用户</text>
@@ -80,23 +80,23 @@
     <view class="cu-list grid col-4 no-border flex justify-around">
       <view class="item">
         <view class="text-center bg-orange header">黄金</view>
-        <view class="text-center">单价 <text class="text-red">{{item.drauPrice}}</text></view>
-        <view class="text-center">数量 <text class="text-red">{{item.drauPriceWeight}}</text></view>
+        <view class="text-center">单价 <text class="text-red">{{item.drauPrice || ''}}</text></view>
+        <view class="text-center">数量 <text class="text-red">{{item.drauPriceWeight || ''}}</text></view>
       </view>
       <view class="item">
         <view class="text-center bg-orange header">铂金</view>
-        <view class="text-center">单价 <text class="text-red">{{item.drptPrice}}</text></view>
-        <view class="text-center">数量 <text class="text-red">{{item.drptPriceWeight}}</text></view>
+        <view class="text-center">单价 <text class="text-red">{{item.drptPrice || ''}}</text></view>
+        <view class="text-center">数量 <text class="text-red">{{item.drptPriceWeight || ''}}</text></view>
       </view>
       <view class="item">
         <view class="text-center bg-orange header">钯金</view>
-        <view class="text-center">单价 <text class="text-red">{{item.drpdPrice}}</text></view>
-        <view class="text-center">数量 <text class="text-red">{{item.drpdPriceWeight}}</text></view>
+        <view class="text-center">单价 <text class="text-red">{{item.drpdPrice || ''}}</text></view>
+        <view class="text-center">数量 <text class="text-red">{{item.drpdPriceWeight || ''}}</text></view>
       </view>
       <view class="item">
         <view class="text-center bg-orange header">白银</view>
-        <view class="text-center">单价 <text class="text-red">{{item.dragPrice}}</text></view>
-        <view class="text-center">数量 <text class="text-red">{{item.dragPriceWeight}}</text></view>
+        <view class="text-center">单价 <text class="text-red">{{item.dragPrice || ''}}</text></view>
+        <view class="text-center">数量 <text class="text-red">{{item.dragPriceWeight || ''}}</text></view>
       </view>
     </view>
     <view class="cu-form-group bg-white">
@@ -107,23 +107,23 @@
     <view class="cu-list grid col-4 no-border flex justify-around">
       <view class="item">
         <view class="text-center bg-orange header">黄金</view>
-        <view class="text-center">单价 <text class="text-red">{{item.dcauPrice}}</text></view>
-        <view class="text-center">数量 <text class="text-red">{{item.dcauPriceWeight}}</text></view>
+        <view class="text-center">单价 <text class="text-red">{{item.dcauPrice || ''}}</text></view>
+        <view class="text-center">数量 <text class="text-red">{{item.dcauPriceWeight || ''}}</text></view>
       </view>
       <view class="item">
         <view class="text-center bg-orange header">铂金</view>
-        <view class="text-center">单价 <text class="text-red">{{item.dcptPrice}}</text></view>
-        <view class="text-center">数量 <text class="text-red">{{item.dcptPriceWeight}}</text></view>
+        <view class="text-center">单价 <text class="text-red">{{item.dcptPrice || ''}}</text></view>
+        <view class="text-center">数量 <text class="text-red">{{item.dcptPriceWeight || ''}}</text></view>
       </view>
       <view class="item">
         <view class="text-center bg-orange header">钯金</view>
-        <view class="text-center">单价 <text class="text-red">{{item.dcpdPrice}}</text></view>
-        <view class="text-center">数量 <text class="text-red">{{item.dcpdPriceWeight}}</text></view>
+        <view class="text-center">单价 <text class="text-red">{{item.dcpdPrice || ''}}</text></view>
+        <view class="text-center">数量 <text class="text-red">{{item.dcpdPriceWeight || ''}}</text></view>
       </view>
       <view class="item">
         <view class="text-center bg-orange header">白银</view>
-        <view class="text-center">单价 <text class="text-red">{{item.dcagPrice}}</text></view>
-        <view class="text-center">数量 <text class="text-red">{{item.dcagPriceWeight}}</text></view>
+        <view class="text-center">单价 <text class="text-red">{{item.dcagPrice || ''}}</text></view>
+        <view class="text-center">数量 <text class="text-red">{{item.dcagPriceWeight || ''}}</text></view>
       </view>
     </view>
   

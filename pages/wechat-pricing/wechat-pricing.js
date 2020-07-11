@@ -23,7 +23,7 @@ Page({
     stockPd: '',
     // 白银应付料库存
     stockAg: '',
-    name: wx.getStorageSync('userInfo').name,
+    name: '',
     params: {
       auPriceWeight: '',
       ptPriceWeight: '',
@@ -36,6 +36,9 @@ Page({
     }
   },
   onLoad() {
+    this.setData({
+      name: wx.getStorageSync('userInfo').name
+    })
   },
   
   // 单选按钮
