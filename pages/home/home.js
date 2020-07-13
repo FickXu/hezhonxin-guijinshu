@@ -115,9 +115,9 @@ Page({
     // 首次加载
     this.queryPrice()
 
-    setInterval(() => {
-      this.queryPrice()
-    }, 1000)
+    // setInterval(() => {
+    //   this.queryPrice()
+    // }, 1000)
     
   },
 })

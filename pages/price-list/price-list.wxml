@@ -3,7 +3,17 @@
 	<view slot="content">{{ title }}</view>
 </cu-custom>
 
-<!-- 投保列表 -->
+<view class="cu-bar search bg-white">
+  <view class="search-form round">
+    <text class="cuIcon-search"></text>
+    <input  bindinput="bindInput" value="{{params.priceListNo}}" data-key="priceListNo" type="text" placeholder="请输入定价单号" confirm-type="search"></input>
+  </view>
+  <view class="action">
+    <button class="cu-btn text-white bg-yellow shadow-yellow round" bindtap="queryList">搜索</button>
+  </view>
+</view>
+
+<!-- 定价列表 -->
 <scroll-view
   class="scroll-page"
   scroll-y="true"
@@ -16,16 +26,16 @@
   >
 
   <!-- 搜索 -->
-  <view class="search-box">
+  <!-- <view class="search-box"> -->
     
     <!-- 快递单号 -->
-    <view class="cu-form-group">
+    <!-- <view class="cu-form-group">
       <view class="title">定价单号</view>
       <input class="text-right" placeholder="请输入定价单号" bindinput="bindInput" value="{{params.priceListNo}}" data-key="priceListNo"></input>
-    </view>
+    </view> -->
 
 
-    <view class="cu-form-group">
+    <!-- <view class="cu-form-group">
       <view class="title">定价类型</view>
       <view class="text-right">
         <radio-group class="block" bindchange="bindchange">
@@ -33,20 +43,20 @@
           <radio class="yellow margin-left-sm" value="dc"></radio>销售
         </radio-group>
       </view>
-    </view>
+    </view> -->
 
     <!-- 开始时间 -->
-    <view class="cu-form-group">
+    <!-- <view class="cu-form-group">
       <view class="title">开始时间</view>
       <picker mode="date" value="{{params.startTime}}" start="2015-09-01" end="2020-09-01" bindchange="DateChange">
         <view class="picker">
           {{params.startTime}}
         </view>
       </picker>
-    </view>
+    </view> -->
     
     <!-- 结束时间 -->
-    <view class="cu-form-group">
+    <!-- <view class="cu-form-group">
       <view class="title">结束时间</view>
       <picker mode="date" value="{{params.endTime}}" start="2015-09-01" end="2020-09-01" bindchange="DateChange1">
         <view class="picker">
@@ -58,7 +68,7 @@
     <view class="margin-tb-lg text-center">
       <button class="cu-btn round bg-yellow" style="width: 80%" bindtap="queryList">查询</button>
     </view>
-  </view>
+  </view> -->
   
   <view class="margin-bottom price-item" wx:for="{{list}}">
     <!-- 表单 -->
@@ -72,34 +82,39 @@
     </view>
   
     <!-- 定价 -->
-    <view class="cu-form-group bg-white">
-      <view class='action text-df'>
-        <text class='cuIcon-titles text-orange '></text> 定价回购
+      <view class="cu-form-group">
+        <text class="title">{{item.createDate}}</text>
+        <text class="text-gray">定价回购</text>
       </view>
-    </view>
+    <!-- <view class="cu-form-group bg-white">
+      <view class='action text-df'>
+        <text class='cuIcon-titles text-orange '></text>
+        <text class='cuIcon-titles text-gray '></text>
+      </view>
+    </view> -->
     <view class="cu-list grid col-4 no-border flex justify-around">
       <view class="item">
-        <view class="text-center bg-orange header">黄金</view>
+        <view class="text-center header {{item.priceListStatue==4?'p-gray':(item.priceListType=='dr'?'p-green':'bg-orange')}}">黄金</view>
         <view class="text-center">单价 <text class="text-red">{{item.drauPrice || ''}}</text></view>
         <view class="text-center">数量 <text class="text-red">{{item.drauPriceWeight || ''}}</text></view>
       </view>
       <view class="item">
-        <view class="text-center bg-orange header">铂金</view>
+        <view class="text-center {{item.priceListStatue==4?'p-gray':(item.priceListType=='dr'?'p-green':'bg-orange')}} header">铂金</view>
         <view class="text-center">单价 <text class="text-red">{{item.drptPrice || ''}}</text></view>
         <view class="text-center">数量 <text class="text-red">{{item.drptPriceWeight || ''}}</text></view>
       </view>
       <view class="item">
-        <view class="text-center bg-orange header">钯金</view>
+        <view class="text-center {{item.priceListStatue==4?'p-gray':(item.priceListType=='dr'?'p-green':'bg-orange')}} header">钯金</view>
         <view class="text-center">单价 <text class="text-red">{{item.drpdPrice || ''}}</text></view>
         <view class="text-center">数量 <text class="text-red">{{item.drpdPriceWeight || ''}}</text></view>
       </view>
       <view class="item">
-        <view class="text-center bg-orange header">白银</view>
+        <view class="text-center {{item.priceListStatue==4?'p-gray':(item.priceListType=='dr'?'p-green':'bg-orange')}} header">白银</view>
         <view class="text-center">单价 <text class="text-red">{{item.dragPrice || ''}}</text></view>
         <view class="text-center">数量 <text class="text-red">{{item.dragPriceWeight || ''}}</text></view>
       </view>
     </view>
-    <view class="cu-form-group bg-white">
+    <!-- <view class="cu-form-group bg-white">
       <view class='action text-df'>
         <text class='cuIcon-titles text-orange '></text> 定价销售
       </view>
@@ -125,7 +140,7 @@
         <view class="text-center">单价 <text class="text-red">{{item.dcagPrice || ''}}</text></view>
         <view class="text-center">数量 <text class="text-red">{{item.dcagPriceWeight || ''}}</text></view>
       </view>
-    </view>
+    </view> -->
   
     <view class="cu-form-group">
       <text class="title">状态</text>

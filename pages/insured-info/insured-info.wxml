@@ -19,6 +19,11 @@
       <view class="text-red">本保险仅对已进入指定承运单位系统的货物整包遗失负责！</view>
     </view>
 
+    <!-- 客户信息 -->
+    <view class="cu-form-group margin-top">
+      <view class="title">客户</view>
+      <text class="text-gray">{{params.customerName}}</text>
+    </view>
     <!-- 表单 -->
     <view class="cu-form-group">
       <view class="title">快递单号</view>
@@ -38,6 +43,10 @@
       <view class="title">保额大写</view>
       <input class="text-right" disabled="{{true}}" type="text" placeholder="保额大写" value="{{uppercaseCharacters}}" />
     </view>
+    <view class="cu-form-group">
+      <view class="title">费率</view>
+      <text class="text-gray">{{params.premiumRate}}</text>
+    </view>
     <view class="cu-form-group ">
       <view class="title">保费</view>
       <input class="text-right" type="text" placeholder="填写保额后自动计算" value="{{params.premium}}" disabled="{{true}}" />
@@ -49,12 +58,8 @@
       <textarea class="text-right" maxlength="-1" bindinput="bindInput" placeholder="请输入要求" value="{{params.coverDesc}}" data-key="coverDesc"></textarea>
     </view>
 
-    <!-- 客户信息 -->
-    <view class="cu-form-group margin-top">
-      <view class="title">客户</view>
-      <text class="text-gray">{{params.customerName}}</text>
-    </view>
-    <view class="cu-form-group">
+    
+    <!-- <view class="cu-form-group">
       <view class="title">收件人</view>
       <text class="text-gray">{{params.recipients}}</text>
     </view>
@@ -63,13 +68,9 @@
       <text class="text-gray">{{params.destinationPort}}</text>
     </view>
     <view class="cu-form-group">
-      <view class="title">费率</view>
-      <text class="text-gray">{{params.premiumRate}}</text>
-    </view>
-    <view class="cu-form-group">
       <view class="title">件数</view>
       <input class="text-right" type="text" placeholder="请输入正整数保费" value="{{params.casesNumber}}" bindinput="bindInput" data-key="casesNumber" />
-    </view>
+    </view> -->
 
     <!-- 提交 -->
     <view class="margin-tb-lg text-center" wx:key>

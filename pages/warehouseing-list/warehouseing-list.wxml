@@ -3,6 +3,16 @@
 	<view slot="content">{{ title }}</view>
 </cu-custom>
 
+<view class="cu-bar search bg-white">
+  <view class="search-form round">
+    <text class="cuIcon-search"></text>
+    <input  bindinput="bindInput" value="{{params.courierNumber}}" data-key="courierNumber" type="text" placeholder="请输入投保单号" confirm-type="search"></input>
+  </view>
+  <view class="action">
+    <button class="cu-btn text-white bg-yellow shadow-yellow round" bindtap="queryList">搜索</button>
+  </view>
+</view>
+
 <!-- 入库列表 -->
 <scroll-view
   class="scroll-page"
@@ -15,16 +25,16 @@
   bindscrolltolower="bindscrolltolower"
   >
   <!-- 搜索 -->
-  <view class="search-box">
+  <!-- <view class="search-box"> -->
     
     <!-- 快递单号 -->
-    <view class="cu-form-group">
+    <!-- <view class="cu-form-group">
       <view class="title">快递单号</view>
       <input class="text-right" placeholder="请输入快递单号" bindinput="bindInput" value="{{params.courierNumber}}" data-key="courierNumber"></input>
-    </view>
+    </view> -->
 
     <!-- 备注说明 -->
-    <view class="cu-form-group">
+    <!-- <view class="cu-form-group">
       <view class="title">备注说明</view>
       <input value="{{params.coverDesc}}" data-key="coverDesc"  bindinput="bindInput" class="text-right" placeholder="请输入备注说明"></input>
     </view>
@@ -32,12 +42,12 @@
     <view class="margin-tb-lg text-center" wx:key>
       <button class="cu-btn round bg-yellow" style="width: 80%" bindtap="queryList">查询</button>
     </view>
-  </view>
+  </view> -->
 
   <!-- 结果 -->
-  <view class="search-result margin-top-xl" wx:if="{{list.length>0}}">
+  <view class="search-result" wx:if="{{list.length>0}}">
 
-    <view wx:for="{{list}}" class="margin-bottom-lg">
+    <view wx:for="{{list}}" class="margin-bottom-sm {{index == 0 ? 'margin-top-xs' : 'margin-top-lg'}}">
       <view class="cu-form-group">
         <view class="title">客户名称</view>
         <text class="text-gray">{{item.customerName}}</text>
@@ -75,7 +85,7 @@
         <text class="text-gray">{{item.enterTimePut}}</text>
       </view>
 
-      <view class="margin-top-lg text-center" wx:key>
+      <view class="margin-top-sm text-center" wx:key>
         <button class="cu-btn round bg-orange" style="width: 80%" bindtap="openDetailPage" data-key="{{item.courierNumber}}">查看详情</button>
       </view>
     </view>
