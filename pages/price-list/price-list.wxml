@@ -95,23 +95,23 @@
     <view class="cu-list grid col-4 no-border flex justify-around">
       <view class="item">
         <view class="text-center header {{item.priceListStatue==4?'p-gray':(item.priceListType=='dr'?'p-green':'bg-orange')}}">黄金</view>
-        <view class="text-center">单价 <text class="text-red">{{item.drauPrice || ''}}</text></view>
-        <view class="text-center">数量 <text class="text-red">{{item.drauPriceWeight || ''}}</text></view>
+        <view class="text-center">单价 <text class="text-red">{{item.auPrice || ''}}</text></view>
+        <view class="text-center">数量 <text class="text-red">{{item.auPriceWeight || ''}}</text></view>
       </view>
       <view class="item">
         <view class="text-center {{item.priceListStatue==4?'p-gray':(item.priceListType=='dr'?'p-green':'bg-orange')}} header">铂金</view>
-        <view class="text-center">单价 <text class="text-red">{{item.drptPrice || ''}}</text></view>
-        <view class="text-center">数量 <text class="text-red">{{item.drptPriceWeight || ''}}</text></view>
+        <view class="text-center">单价 <text class="text-red">{{item.ptPrice || ''}}</text></view>
+        <view class="text-center">数量 <text class="text-red">{{item.ptPriceWeight || ''}}</text></view>
       </view>
       <view class="item">
         <view class="text-center {{item.priceListStatue==4?'p-gray':(item.priceListType=='dr'?'p-green':'bg-orange')}} header">钯金</view>
-        <view class="text-center">单价 <text class="text-red">{{item.drpdPrice || ''}}</text></view>
-        <view class="text-center">数量 <text class="text-red">{{item.drpdPriceWeight || ''}}</text></view>
+        <view class="text-center">单价 <text class="text-red">{{item.pdPrice || ''}}</text></view>
+        <view class="text-center">数量 <text class="text-red">{{item.pdClosedWeight || ''}}</text></view>
       </view>
       <view class="item">
         <view class="text-center {{item.priceListStatue==4?'p-gray':(item.priceListType=='dr'?'p-green':'bg-orange')}} header">白银</view>
-        <view class="text-center">单价 <text class="text-red">{{item.dragPrice || ''}}</text></view>
-        <view class="text-center">数量 <text class="text-red">{{item.dragPriceWeight || ''}}</text></view>
+        <view class="text-center">单价 <text class="text-red">{{item.agPrice || ''}}</text></view>
+        <view class="text-center">数量 <text class="text-red">{{item.agPriceWeight || ''}}</text></view>
       </view>
     </view>
     <!-- <view class="cu-form-group bg-white">

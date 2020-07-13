@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/price-list/price-list",
     "pages/home/home",
+    "pages/price-list/price-list",
     "pages/insured-list/insured-list",
     "pages/warehouseing-list/warehouseing-list",
     "pages/login/login",
