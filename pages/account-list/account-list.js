@@ -58,7 +58,8 @@ Page({
       // }
     ],
     // 应收付账单结余是否显示
-    ysfzdShow: false
+    ysfzdShow: false,
+    rtStatus: false
   },
   onLoad() {
     this.getLastWeekDate()
@@ -69,6 +70,36 @@ Page({
     this.setData({
       ysfzdShow: !this.data.ysfzdShow
     })
+  },
+
+  // 离开顶部时触发
+  bindrefresherpulling() {
+    this.setData({
+      'params.currentPage': 1,
+      'params.pagesize': 10,
+      'params.remark': '',
+      'params.customerId': '',
+      'params.customerName': '',
+      'params.priceListType': '',
+      'params.startTime': '',
+      'params.endTime': '',
+    })
+
+    setTimeout(() => {
+      this.setData({
+        rtStatus: false
+      })
+    }, 2000);
+    this.queryList()
+  },
+  
+  // 滚动到底部时触发
+  bindscrolltolower() {
+    this.setData({
+      'params.currentPage': ++this.data.params.currentPage,
+    })
+
+    this.queryList()
   },
   
   DateChange(e) {

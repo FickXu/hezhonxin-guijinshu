@@ -3,8 +3,17 @@
 	<view slot="content">{{ title }}</view>
 </cu-custom>
 
-<!-- 投保列表 -->
-<scroll-view scroll-y="true">
+<!-- 账单列表 -->
+<scroll-view
+  class="scroll-page"
+  scroll-y="true"
+  lower-threshold="50"
+  enable-back-to-top="{{true}}"
+  refresher-enabled="{{true}}"
+  refresher-triggered="{{rtStatus}}"
+  bindrefresherpulling="bindrefresherpulling" 
+  bindscrolltolower="bindscrolltolower"
+  >
 
   <!-- 搜索 -->
   <view class="search-box">
