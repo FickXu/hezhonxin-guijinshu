@@ -56,11 +56,19 @@ Page({
       //   dealWithAg: '67万',
       //   remark: '1000g',
       // }
-    ]
+    ],
+    // 应收付账单结余是否显示
+    ysfzdShow: false
   },
   onLoad() {
     this.getLastWeekDate()
     this.queryList()
+  },
+
+  ysfzd() {
+    this.setData({
+      ysfzdShow: !this.data.ysfzdShow
+    })
   },
   
   DateChange(e) {
