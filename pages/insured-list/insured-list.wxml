@@ -6,7 +6,7 @@
 <view class="cu-bar search bg-white">
   <view class="search-form round">
     <text class="cuIcon-search"></text>
-    <input  bindinput="bindInput" value="{{params.courierNumber}}" data-key="courierNumber" type="text" placeholder="请输入投保单号" confirm-type="search"></input>
+    <input  bindinput="bindInput" value="{{params.courierNumber}}" data-key="courierNumber" type="text" placeholder="请输入快递单号" confirm-type="search"></input>
   </view>
   <view class="action">
     <button class="cu-btn text-white bg-yellow shadow-yellow round" bindtap="queryList">搜索</button>
@@ -49,7 +49,7 @@
 
     <view class="cu-item" wx:for="{{list}}">
       <view class="content padding-tb-sm">
-        <view>快递编号：{{item.courierNumber}}</view>
+        <view>快递单号：{{item.courierNumber}}</view>
         <view class="text-gray text-sm">{{item.createDate}}</view>
       </view>
       <view class="action {{item.isGet == 1 ? 'text-red' : ''}}">{{item.isGet == 0 ? '已到' : '未到'}}</view>
