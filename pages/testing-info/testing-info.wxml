@@ -45,11 +45,11 @@
         <view class="zjs-tag bg-gray margin-left-sm margin-top-xs">{{detail.auTotalHeavyPlate}}g</view>
       </view>
       <view class="tag-box justify-center">
-        <view class="label">钯金</view>
+        <view class="label">铂金</view>
         <view class="zjs-tag bg-gray margin-left-sm margin-top-xs">{{detail.ptTotalHeavyPlate}}g</view>
       </view>
       <view class="tag-box justify-center">
-        <view class="label">铂金</view>
+        <view class="label">钯金</view>
         <view class="zjs-tag bg-gray margin-left-sm margin-top-xs">{{detail.pdTotalHeavyPlate}}g</view>
       </view>
       <view class="tag-box justify-center">
@@ -71,12 +71,12 @@
         <view class="zjs-tag bg-gray margin-left-sm margin-top-xs">{{detail.auTotalNetWeight}}g</view>
       </view>
       <view class="tag-box justify-center">
-        <view class="label">钯金</view>
-        <view class="zjs-tag bg-gray margin-left-sm margin-top-xs">{{itdetailem.ptTotalNetWeight}}g</view>
+        <view class="label">铂金</view>
+        <view class="zjs-tag bg-gray margin-left-sm" margin-top-xs>{{detail.ptTotalNetWeight}}g</view>
       </view>
       <view class="tag-box justify-center">
-        <view class="label">铂金</view>
-        <view class="zjs-tag bg-gray margin-left-sm" margin-top-xs>{{detail.pdTotalNetWeight}}g</view>
+        <view class="label">钯金</view>
+        <view class="zjs-tag bg-gray margin-left-sm margin-top-xs">{{itdetailem.pdTotalNetWeight}}g</view>
       </view>
       <view class="tag-box justify-center">
         <view class="label">白银</view>

@@ -71,6 +71,7 @@ Page({
     // 处理保费
     if (key === 'coverage') {
       let premium = value * this.data.params.premiumRate
+      console.log(premium)
       this.setData({
         'params.premium': this.substr(premium)
       })
@@ -107,8 +108,12 @@ Page({
   // 仅截取不四舍五入
   substr(c) {
     let arr = c.toString().split('.')
-    arr[1] = arr[1].substr(0, 2)
-    return arr.join('.')
+    if (arr.length > 1) {
+      arr[1] = arr[1].substr(0, 2)
+      return arr.join('.')
+    } else {
+      return c
+    }
   },
 
   /**
