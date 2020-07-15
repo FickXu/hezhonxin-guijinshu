@@ -64,9 +64,9 @@
     <view class="margin-bottom" wx:for="{{list}}">
 
       <!-- 表单 -->
-      <view class="cu-form-group">
-        <text class="title">{{item.createDate}}</text>
-        <text class="text-gray">{{item.dealTypeName}}</text>
+      <view class="cu-form-group bg-yellow">
+        <text class="title text-white">{{item.createDate}}</text>
+        <text class="text-white">{{item.dealTypeName}}</text>
       </view>
       <!-- <view class="cu-form-group">
         <text class="title">交易类型</text>
