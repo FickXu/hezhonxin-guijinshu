@@ -106,7 +106,7 @@
       <view class="item">
         <view class="text-center {{item.priceListStatue==4?'p-gray':(item.priceListType=='dr'?'p-green':'bg-orange')}} header">钯金</view>
         <view class="text-center">单价 <text class="text-red">{{item.pdPrice || ''}}</text></view>
-        <view class="text-center">数量 <text class="text-red">{{item.pdClosedWeight || ''}}</text></view>
+        <view class="text-center">数量 <text class="text-red">{{item.pdPriceWeight || ''}}</text></view>
       </view>
       <view class="item">
         <view class="text-center {{item.priceListStatue==4?'p-gray':(item.priceListType=='dr'?'p-green':'bg-orange')}} header">白银</view>
