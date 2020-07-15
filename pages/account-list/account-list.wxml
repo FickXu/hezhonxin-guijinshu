@@ -105,7 +105,7 @@
       </view>
       <view class="cu-form-group">
         <view class="title">款</view>
-        <text class="text-gray">{{item.dealWithMoney}}g</text>
+        <text class="text-gray">{{item.dealWithMoney}}元</text>
       </view>
   
       <view class="cu-form-group" bindtap="ysfzd" data-index="{{index}}">
