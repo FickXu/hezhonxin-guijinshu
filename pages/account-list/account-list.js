@@ -57,8 +57,6 @@ Page({
       //   remark: '1000g',
       // }
     ],
-    // 应收付账单结余是否显示
-    ysfzdShow: false,
     rtStatus: false
   },
   onLoad() {
@@ -66,9 +64,12 @@ Page({
     this.queryList()
   },
 
-  ysfzd() {
+  ysfzd(e) {
+    let index = e.currentTarget.dataset.index
+    let list = this.data.list
+    list[index].ysfzdShow = !list[index].ysfzdShow
     this.setData({
-      ysfzdShow: !this.data.ysfzdShow
+      list: list
     })
   },
 
@@ -138,11 +139,15 @@ Page({
           arr = res.data.data
           arr.forEach(item => {
             item.createDate = formatTime(new Date(item.createDate))
+            // 应收付账单结余是否显示
+            item.ysfzdShow = false
           })
         } else {
           let _arr = res.data.data
           _arr.forEach(item => {
             item.createDate = formatTime(new Date(item.createDate))
+            // 应收付账单结余是否显示
+            item.ysfzdShow = false
           })
           arr = [].concat(this.data.list, _arr)
         }

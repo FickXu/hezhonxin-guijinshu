@@ -6,7 +6,7 @@
 <view class="cu-bar search bg-white">
   <view class="search-form round">
     <text class="cuIcon-search"></text>
-    <input  bindinput="bindInput" value="{{params.courierNumber}}" data-key="courierNumber" type="text" placeholder="请输入投保单号" confirm-type="search"></input>
+    <input  bindinput="bindInput" value="{{params.courierNumber}}" data-key="courierNumber" type="text" placeholder="请输入快递单号" confirm-type="search"></input>
   </view>
   <view class="action">
     <button class="cu-btn text-white bg-yellow shadow-yellow round" bindtap="queryList">搜索</button>
