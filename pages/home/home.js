@@ -93,6 +93,23 @@ Page({
 
   // 投保页面
   openInsurePage() {
+
+    if (!wx.getStorageSync('userInfo')) {
+      wx.showModal({
+        title: '提示',
+        content: '用户未登录，是否登录？',
+        success: res => {
+          if (res.confirm) {
+            wx.navigateTo({
+              url: '../login/login'
+            })
+          }
+        }
+      })
+      return
+    }
+
+    // 已登录跳转到投保页面
     wx.navigateTo({
       url: '../../pages/insured-info/insured-info'
     })
@@ -100,6 +117,23 @@ Page({
 
   // 投保页面
   openPricePage() {
+
+    if (!wx.getStorageSync('userInfo')) {
+      wx.showModal({
+        title: '提示',
+        content: '用户未登录，是否登录？',
+        success: res => {
+          if (res.confirm) {
+            wx.navigateTo({
+              url: '../login/login'
+            })
+          }
+        }
+      })
+      return
+    }
+
+    // 已登录跳转到微信定价页面
     wx.navigateTo({
       url: '../../pages/wechat-pricing/wechat-pricing'
     })
@@ -107,10 +141,6 @@ Page({
 
   // 页面显示时
   onShow: function () {
-
-    // this.setData({
-    //   isLogin: wx.getStorageSync('openId') ? true : false
-    // })
 
     // 首次加载
     this.queryPrice()

@@ -75,6 +75,7 @@ Page({
         wx.showToast({
           title: res.data.msg
         })
+        wx.navigateBack()
       }
     })
   },
@@ -90,7 +91,6 @@ Page({
           stockPd: res.data.data.stockPd,
           stockAg: res.data.data.stockAg,
         })
-        wx.navigateBack()
       }
     })
   },
