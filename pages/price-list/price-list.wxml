@@ -72,7 +72,7 @@
   
   <view class="margin-bottom price-item" wx:for="{{list}}">
     <!-- 表单 -->
-    <view class="cu-form-group bg-yellow">
+    <view class="cu-form-group {{item.priceListStatue==4?'p-gray':(item.priceListType=='dr'?'p-green':'bg-orange')}}">
       <text class="title">定价单号</text>
       <text class="text-white">{{item.priceListNo}}</text>
     </view>
@@ -106,7 +106,7 @@
       <view class="item">
         <view class="text-center {{item.priceListStatue==4?'p-gray':(item.priceListType=='dr'?'p-green':'bg-orange')}} header">钯金</view>
         <view class="text-center">单价 <text class="text-red">{{item.pdPrice || ''}}</text></view>
-        <view class="text-center">数量 <text class="text-red">{{item.pdClosedWeight || ''}}</text></view>
+        <view class="text-center">数量 <text class="text-red">{{item.pdPriceWeight || ''}}</text></view>
       </view>
       <view class="item">
         <view class="text-center {{item.priceListStatue==4?'p-gray':(item.priceListType=='dr'?'p-green':'bg-orange')}} header">白银</view>
@@ -146,10 +146,10 @@
       <text class="title">状态</text>
       <text class="text-gray">{{item.priceListStatueName}}</text>
     </view>
-    <view class="cu-form-group">
+    <!-- <view class="cu-form-group">
       <text class="title">时间</text>
       <text class="text-gray">{{item.createDate}}</text>
-    </view>
+    </view> -->
   </view>
     
 </scroll-view>

@@ -37,7 +37,7 @@
     <!-- 保费 -->
     <view class="cu-form-group margin-top">
       <view class="title">保额</view>
-      <input class="text-right" type="number" placeholder="请输入正整数的保额" value="{{params.coverage}}" bindinput="bindInput" data-key="coverage" />
+      <input class="text-right" maxlength="{{7}}" type="number" placeholder="请输入正整数的保额" value="{{params.coverage}}" bindinput="bindInput" data-key="coverage" />
     </view>
     <view class="cu-form-group">
       <view class="title">保额大写</view>

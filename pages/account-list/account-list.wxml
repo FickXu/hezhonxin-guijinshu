@@ -64,19 +64,14 @@
     <view class="margin-bottom" wx:for="{{list}}">
 
       <!-- 表单 -->
-      <view class="cu-form-group">
-        <text class="title">时间</text>
-        <text class="text-gray">{{item.createDate}}</text>
+      <view class="cu-form-group bg-yellow">
+        <text class="title text-white">{{item.createDate}}</text>
+        <text class="text-white">{{item.dealTypeName}}</text>
       </view>
-      <view class="cu-form-group">
+      <!-- <view class="cu-form-group">
         <text class="title">交易类型</text>
         <text class="text-gray">{{item.dealTypeName}}</text>
-      </view>
-      <view class="cu-form-group">
-        <text class="title">客户名</text>
-        <text class="text-gray">{{item.customerName}}</text>
-      </view>
-      
+      </view> -->
       <!-- 应收付账单结余款 -->
       <view class="cu-form-group">
         <view class="title">应收付账单结余</view>
@@ -91,21 +86,21 @@
       <view class="cu-form-group flex justify-between align-center">
         <view class="flex justify-between align-center basis-sm">
           <text class="title">黄金</text>
-          <text class="content text-gray">{{item.dealWithAu}}元</text>
+          <text class="content text-gray">{{item.dealWithAu}}g</text>
         </view>
         <view class="flex justify-between align-center basis-sm">
           <text class="title">铂金</text>
-          <text class="text-gray">{{item.dealWithPt}}元</text>
+          <text class="text-gray">{{item.dealWithPt}}g</text>
         </view>
       </view>
       <view class="cu-form-group flex justify-between align-center">
         <view class="flex justify-between align-center basis-sm">
           <text class="title">钯金</text>
-          <text class="content text-gray">{{item.dealWithPd}}元</text>
+          <text class="content text-gray">{{item.dealWithPd}}g</text>
         </view>
         <view class="flex justify-between align-center basis-sm">
           <text class="title">白银</text>
-          <text class="text-gray">{{item.dealWithAg}}元</text>
+          <text class="text-gray">{{item.dealWithAg}}g</text>
         </view>
       </view>
       <view class="cu-form-group">
@@ -119,6 +114,10 @@
       </view>
 
       <view wx:if="{{item.ysfzdShow}}">
+        <view class="cu-form-group">
+          <text class="title">客户名</text>
+          <text class="text-gray">{{item.customerName}}</text>
+        </view>
         <!-- 进出账信息 -->
         <view class="cu-bar bg-white margin-top-xs">
           <view class='action text-df'>

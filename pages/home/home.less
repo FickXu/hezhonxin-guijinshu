@@ -1,5 +1,5 @@
 // .top-area 高度
-@height-top-area: 460rpx;
+@height-top-area: 240rpx;
 // .near-shop-info margin top
 @padding-top-scrollpage: 420rpx;
 // 底部导航高度
@@ -11,9 +11,9 @@
 
 .top-area {
   width: 100%;
-  height: @height-top-area;
-  background-color: #febd01;
-  background-image: url('http://120.25.56.43/file/base/wechat/wechatp4.png');
+  // height: @height-top-area;
+  // background-color: #febd01;
+  background-image: url('https://www.hzx9999.com/file/wechatapplet/2.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
   .nav-title {
@@ -36,6 +36,9 @@
   flex-wrap: wrap;
   width: 100%;
   background-color: #ffffff;
+  background-image: url('https://www.hzx9999.com/file/wechatapplet/2.png');
+  background-size: 100% auto;
+  background-repeat: no-repeat;
   padding-bottom: @height-login;
 
   .container {
@@ -43,6 +46,7 @@
     padding: 30rpx;
     border-radius: 30rpx;
     background-color: #fff;
+    margin-top: 200rpx;
   }
 
   // 定价信息
@@ -85,11 +89,11 @@
 
   // 报价明细
   .quoted {
-    margin-top: 60rpx;
+    // margin-top: 60rpx;
 
     // 列表
     &-list {
-      padding: 20rpx;
+      // padding: 20rpx;
     }
     
     // item
@@ -102,19 +106,20 @@
       border-bottom: 1px solid #f7f7f7;
 
       .name {
-        flex: 3;
+        flex: 1;
         width: 150rpx;
         height: 64rpx;
         line-height: 64rpx;
-        color: #ffffff; 
+        // color: #ffffff; 
+        font-weight: bold;
         font-size: 30rpx;
         text-align: center;
         border-radius: 10rpx;
-        background-image: linear-gradient(#f7d05f, #f7b050);
+        // background-image: linear-gradient(#f7d05f, #f7b050);
       }
 
       .attr-item {
-        flex: 2;
+        flex: 1;
         text-align: right;
 
         .label {
@@ -124,8 +129,10 @@
 
         .value {
           color: #333333;
-          font-size: 25rpx;
           margin-top: 10rpx;
+          font-size: 30rpx;
+          font-weight: bold;
+          text-align: center;
         }
       }
 
@@ -151,12 +158,41 @@
   bottom: @height-nav;
   padding: 0 30rpx;
   background-color: #fff;
-
-  .warn {
-    color: #888888;
-  }
-
+  
   .btn-login {
     color: #f7b452;
+  }
+}
+
+.warn {
+  color: #afafaf;
+  margin-top: 10rpx;
+}
+
+.banner-box {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 140rpx;
+  margin-top: 40rpx;
+  .btn-price {
+    flex-basis: 48%;
+    height: 140rpx;
+    border-radius: 20rpx;
+    overflow: hidden;
+    background-image: url('https://www.hzx9999.com/file/wechatapplet/1.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+  .btn-insured {
+    margin-left: 20rpx;
+    flex-basis: 48%;
+    height: 140rpx;
+    border-radius: 20rpx;
+    overflow: hidden;
+    background-image: url('https://www.hzx9999.com/file/wechatapplet/3.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
   }
 }
