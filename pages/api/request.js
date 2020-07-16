@@ -2,7 +2,7 @@ const app = new getApp()
 
 // 服务器地址
 // let serviceUrl = 'https://dssjewel.com/applet/'
-let serviceUrl = ' https://www.hzx9999.com/wechatapplet/api/'
+let serviceUrl = 'https://www.hzx9999.com/wechatapplet/api/'
 
 /* 
 * path, 业务借口的请求路径
