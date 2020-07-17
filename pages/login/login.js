@@ -14,9 +14,9 @@ Page({
       title: '登录',
     },
     params: {
-      password: '111111',
+      password: '',
       filialeKey: app.globalData.filialeKey,
-      userAccount: 'SZHZX001071',
+      userAccount: '',
     }
   },
 
