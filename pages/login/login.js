@@ -13,6 +13,7 @@ Page({
       iconUrl: '../images/logo.png',
       title: '登录',
     },
+    // 52452  SZHZX001071
     params: {
       password: '',
       filialeKey: app.globalData.filialeKey,
@@ -85,6 +86,12 @@ Page({
               reject(res)
             }
           })
+        },
+        fail: fail=>{
+          console.log('fail', fail)
+        },
+        complete: c => {
+          console.log('complete', c)
         }
       })
     })
@@ -92,7 +99,6 @@ Page({
   // 微信登录
   _getUserInfo: function() {
     let self = this
-
     self._wxLogin().then(res => {
       // 缓存到本地的openId，持久化登录
       wx.setStorage({

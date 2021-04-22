@@ -33,6 +33,10 @@ Page({
       priceListType: '',
       // 定价单类型名称
       priceListTypeName: '',
+      // 打款提醒
+      whetherWithdrawals: '',
+      // 预约提料
+      whetherLifting: ''
     }
   },
   onLoad() {
@@ -49,12 +53,20 @@ Page({
       'params.priceListTypeName': value === 'dr' ? '回购' : (value === 'dc' ? '销售' : '')
     })
   },
-  
+
+  // 复选按钮
+  checkboxChange(e) {
+    let values = e.detail.value
+    this.setData({
+      "params.whetherWithdrawals": values.includes('DKTX') ? 'Y' : '',
+      "params.whetherLifting": values.includes('YYTL') ? 'Y' : ''
+    })
+  },
+
   // 用户输入时
   bindinput(e) {
     let key = e.currentTarget.dataset.key
     let value = e.detail.value
-    console.log(key, value)
     let params = {
       ...this.data.params,
     }
@@ -69,7 +81,6 @@ Page({
     let params = {
       ...this.data.params
     }
-
     request('customer/pricelistadd', params).then(res => {
       if (res.data.code == 0) {
         wx.showToast({

@@ -44,20 +44,31 @@
         <text class="text-gray">{{stockAg}}克</text>
       </view>
     </view>
-    <view class="cu-form-group flex justify-between">
-      <view class="title basis-sm">定价类型</view>
-      <view class="text-right basis-lg">
-        <radio-group class="block flex justify-between" bindchange="bindchange">
-          <view>
-            <radio class="yellow" value="dr"></radio>回购
-          </view>
-          <view>
-            <radio class="yellow margin-left-sm" value="dc"></radio>销售
-          </view>
-        </radio-group>
+    <view class="margin-top bg-white padding-top">
+      <view class='action text-df text-black'>
+        <text class='cuIcon-titles text-orange'></text> 定价类型
       </view>
     </view>
-
+    <view class="bg-white text-right basis-lg">
+      <radio-group class="block  cu-form-group" bindchange="bindchange">
+        <view>
+          <radio class="yellow" value="dr"></radio>定价回购
+        </view>
+        <view>
+          <radio class="yellow margin-left-sm" value="dc"></radio>定价销售
+        </view>
+      </radio-group>
+      <view class="cu-form-group">
+        <checkbox-group class="flex justify-between" style="width:100%" bindchange="checkboxChange">
+          <view class=""><checkbox class="round yellow" value="DKTX"></checkbox>打款提醒</view>
+          <view class=""><checkbox class="round yellow" value="YYTL"></checkbox>预约提料</view>
+        </checkbox-group>
+      </view>
+      <!-- <radio-group class="block flex justify-between" bindchange="bindchange">
+        <view>
+        </view>
+      </radio-group> -->
+    </view>
     <view class="margin-top bg-white padding-top">
       <view class='action text-df text-black'>
         <text class='cuIcon-titles text-orange'></text> 定价数量
